@@ -65,3 +65,8 @@ uint8_t Sensor::onCreate()
 	
 }
 
+uint8_t Sensor::getPin()
+{
+	return mPin;	
+}
+

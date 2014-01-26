@@ -14,18 +14,20 @@
 #include "AlwaysCondition.h"
 #include "Structs.h"
 #include "Pcd8544Output.h"
+#include "DigitalSensor.h"
 
 
 LightSensor lightSensor(0);
+DigitalSensor digiSensor(6);
 
 AlwaysCondition always;
 
 SerialOutput serialOutput;
-
 Pcd8544Output pcd8544Output(12,11,10,9,8);
 
 static Sensor* sensors[] = {
-	&lightSensor
+	&lightSensor,
+	&digiSensor
 };
 static uint8_t sensorsSize = sizeof(sensors)/sizeof(Sensor*);
 
@@ -37,7 +39,8 @@ static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
 static Mapping mapping[] = {
 	{&lightSensor, &always, &serialOutput},
-	{&lightSensor, &always, &pcd8544Output}
+	{&lightSensor, &always, &pcd8544Output},
+	{&digiSensor, &always, &pcd8544Output}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

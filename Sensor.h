@@ -17,7 +17,7 @@
 
 class Sensor : public ISensor, public Object
 {
-	private:
+	protected:
 		Rule mRules[MAX_RULES_COUNT];
 		uint8_t mRulesCnt;
 		uint8_t mPin;
@@ -39,6 +39,8 @@ class Sensor : public ISensor, public Object
 
 		virtual uint8_t addRule(Condition * condition, Output * output);
 		virtual uint8_t addRule(Rule rule);
+		
+		virtual uint8_t getPin();
 		
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();

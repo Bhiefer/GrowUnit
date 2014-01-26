@@ -29,6 +29,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\Condition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Configuration.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Constants.h"
+#include "C:\Development\Arduino\projects\GrowUnit\DigitalSensor.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\DigitalSensor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\ICondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\IObject.h"
 #include "C:\Development\Arduino\projects\GrowUnit\IOutput.h"

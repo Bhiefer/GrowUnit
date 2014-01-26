@@ -94,10 +94,8 @@ void loop()
 	{
 		outputs[i]->onMeasured();
 	}
-	
-	Serial.println(analogRead(0));
-	
-	delay(500);
+		
+	delay(1000);
 	// 	// if there are incoming bytes available
 	// 	// from the server, read them and print them:
 	// 	if (client.available()) {

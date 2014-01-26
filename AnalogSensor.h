@@ -25,6 +25,7 @@ class AnalogSensor : public Sensor
 	{}
 	protected:
 	virtual int16_t measureValue();
+	virtual uint8_t onCreate();
 	private:
 
 }; //AnalogSensor

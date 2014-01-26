@@ -53,6 +53,7 @@
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -88,6 +89,7 @@
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -270,6 +272,7 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -305,6 +308,7 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
+            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -495,6 +499,12 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Constants.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DigitalSensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DigitalSensor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="ICondition.h">

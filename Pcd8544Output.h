@@ -17,6 +17,7 @@ class Pcd8544Output : public Adafruit_PCD8544, public Output
 {
 private:
 	int16_t mLight;	
+int16_t mSwitch;
 //functions
 public:
 	Pcd8544Output(int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk);

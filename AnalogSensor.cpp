@@ -11,6 +11,10 @@
 
 int16_t AnalogSensor::measureValue()
 {
-	Serial.println(mPin);
 	return analogRead(mPin);
+}
+
+uint8_t AnalogSensor::onCreate()
+{
+	
 }

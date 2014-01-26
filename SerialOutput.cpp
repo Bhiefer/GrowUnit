@@ -20,6 +20,8 @@ uint8_t SerialOutput::onCreate()
 
 uint8_t SerialOutput::onReceive( int16_t value, Sensor * sensor )
 {
-	Serial.print("Value:");
+	Serial.print("Pin:");
+	Serial.print(sensor->getPin());
+	Serial.print(",value:");
 	Serial.println(value);	
 }
