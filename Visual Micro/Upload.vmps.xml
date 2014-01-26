@@ -9,25 +9,28 @@
       <VCCodeMacros />
     </VCCodeModel>
     <BreakPoints>
-      <BreakPoint Index="1" Name="GrowUnit.ino, line 82 character 1" Id="6c663922-5e19-44a1-ba1b-c36da3e1533c" Enabled="1" Message="" MessageTextType="2" PreProcessedMessage="" Condition="" ConditionType="1" CurrentHits="0" File="c:\development\arduino\projects\growunit\growunit.ino" FileLine="82" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="AVR GCC" LocationType="3" Tag="&lt;vmbp Id='6c663922-5e19-44a1-ba1b-c36da3e1533c'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="1">
-        <Source>75	}
-76	
-77	void loop()
-78	{
-79		Serial.println("Loop");
-80		Serial.println("pppp");
-81	
---&gt;82		sensors[0]-&gt;measure();
-83		
-84		delay(100);
-85	// 	// if there are incoming bytes available
-86	// 	// from the server, read them and print them:
-87	// 	if (client.available()) {
-88	// 		char c = client.read();
-89	// 		Serial.print(c);
-90	// 	}
-91	// 
+      <BreakPoint Index="1" Name="GrowUnit.ino, line 85 character 1" Id="d0020d84-e073-466c-bed3-65027e45f036" Enabled="1" Message="{millis()}" MessageTextType="2" PreProcessedMessage="{0}" Condition="millis()&gt;0 || millis()&gt;1" ConditionType="1" CurrentHits="0" File="c:\development\arduino\projects\growunit\growunit.ino" FileLine="85" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="250" HitCountType="4" Language="AVR GCC" LocationType="3" Tag="&lt;vmbp Id='d0020d84-e073-466c-bed3-65027e45f036'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="1">
+        <Source>78	// 	}
+79	// 	else {
+80	// 		// if you didn't get a connection to the server:
+81	// 		Serial.println("connection failed");
+82	// 	}
+83	}
+84	
+--&gt;85	void loop()
+86	{
+87		Serial.print("Loop ");
+88		Serial.println(counter++);
+89	
+90		sensors[0]-&gt;measure();
+91		
+92		delay(500);
+93	// 	// if there are incoming bytes available
+94	// 	// from the server, read them and print them:
 </Source>
+        <MessageVariables>
+          <MessageVariable Name="millis()" Index="1" />
+        </MessageVariables>
       </BreakPoint>
     </BreakPoints>
   </Program>

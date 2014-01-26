@@ -19,7 +19,7 @@ class Condition : public ICondition, public Object
 	public:
 	Condition() { mByte = 0;}
 	
-	virtual void check(int value);
+	virtual bool check(int value);
 	
 	virtual char * toString();
 }; //Condition

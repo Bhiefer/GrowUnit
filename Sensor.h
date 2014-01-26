@@ -12,19 +12,13 @@
 #include "ISensor.h"
 #include "Object.h"
 #include "Constants.h"
-
-struct Rule
-{
-	Condition * condition;
-	Output * output;
-};
-
-typedef struct Rule Rule;
+#include "Condition.h"
+#include "Structs.h"
 
 class Sensor : public ISensor, public Object
 {
 	private:
-		Rule mRules[];
+		Rule mRules[MAX_RULES_COUNT];
 		byte mRulesCnt;
 		byte mPin;
 		byte mIdentifier;

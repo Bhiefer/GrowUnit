@@ -8,10 +8,10 @@
 
 #include "Condition.h"
 
-void Condition::check(int value)
+bool Condition::check(int value)
 {
 	Serial.println("Check");
-	return;
+	return true;
 }
 
 char * Condition::toString()

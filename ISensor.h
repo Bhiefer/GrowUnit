@@ -9,10 +9,10 @@
 #ifndef __ISENSOR_H__
 #define __ISENSOR_H__
 
-#include "Condition.h"
 #include "Arduino.h"
 
 class Output;
+class Condition;
 
 class ISensor
 {

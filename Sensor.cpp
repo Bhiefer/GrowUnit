@@ -8,8 +8,7 @@
 
 #include "Sensor.h"
 #include "Output.h"
-#include "AlwaysCondition.h"
-#include "MemoryFree.h"
+#include "Condition.h"
 
 // functions
 byte Sensor::measure()//virtual
@@ -20,20 +19,7 @@ byte Sensor::measure()//virtual
 		Rule r = mRules[i];
 		int value = measureValue();
 		
-		//		Serial.println(value);
-		
-// 		Condition * c = r.condition;
-// 		
-// 		(*c).check(0);
-
-		Condition c;
-		c.toString();
-		
-//		r.condition->toString();
-
-		//	if(r.condition->check(value))
-		
-		//if(c->check(0))
+		if(r.condition->check(value))
 		{
 			r.output->onReceive(value, this);
 		}

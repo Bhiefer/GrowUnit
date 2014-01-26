@@ -16,6 +16,8 @@ by David A. Mellis
 #include <SPI.h>
 #include "Configuration.h"
 
+static int counter;
+
 // // Enter a MAC address for your controller below.
 // // Newer Ethernet shields have a MAC address printed on a sticker on the shield
 // byte mac[] = {  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
@@ -31,6 +33,7 @@ by David A. Mellis
 
 void setup() 
 {
+	counter = 0;
 	Serial.begin(9600);
 	delay(2000);
 	Serial.println("Started");
@@ -45,6 +48,11 @@ void setup()
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);	
 	}
 	
+	Mapping m = {&lightSensor, &always, &serialOutput};
+	
+	Rule r = {m.condition, m.output};
+	
+	Rule s = {mapping[0].condition, mapping[0].output};
 	
 	
 // 	Ethernet.begin(mac, ip); 
@@ -76,12 +84,12 @@ void setup()
 
 void loop()
 {
-	Serial.println("Loop");
-	Serial.println("pppp");
+	Serial.print("Loop ");
+	Serial.println(counter++);
 
 	sensors[0]->measure();
 	
-	delay(100);
+	delay(500);
 // 	// if there are incoming bytes available
 // 	// from the server, read them and print them:
 // 	if (client.available()) {

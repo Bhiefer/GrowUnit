@@ -12,15 +12,8 @@
 #include "SerialOutput.h"
 #include "LightSensor.h"
 #include "AlwaysCondition.h"
+#include "Structs.h"
 
-struct Mapping
-{
-	Sensor * sensor;
-	Condition * condition;
-	Output * output;
-};
-
-typedef struct Mapping Mapping;
 
 LightSensor lightSensor(1);
 
