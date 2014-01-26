@@ -1,4 +1,4 @@
-/* 
+/*
 * Condition.h
 *
 * Created: 24.1.2014 23:34:16
@@ -10,22 +10,18 @@
 #define __CONDITION_H__
 
 #include "ICondition.h"
+#include "Object.h"
 
-class Condition : public ICondition
+class Condition : public ICondition, public Object
 {
-//variables
-public:
-protected:
-private:
-
-//functions
-public:
-	Condition();
-protected:
-private:
-public:
-	virtual bool check(int value);
-
+	byte mByte;
+	//functions
+	public:
+	Condition() { mByte = 0;}
+	
+	virtual void check(int value);
+	
+	virtual char * toString();
 }; //Condition
 
 #endif //__CONDITION_H__

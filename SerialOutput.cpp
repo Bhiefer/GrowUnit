@@ -12,7 +12,14 @@ SerialOutput::SerialOutput()
 {
 } //SerialOutput
 
-void SerialOutput::init()
+byte SerialOutput::onCreate()
 {
-	
+	// Open serial communications and wait for port to open:
+//	Serial.begin(9600);	
+}
+
+byte SerialOutput::onReceive( int value, Sensor * sensor )
+{
+	Serial.print("Value:");
+	Serial.println(value);	
 }

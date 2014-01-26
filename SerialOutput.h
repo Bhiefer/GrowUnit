@@ -9,8 +9,9 @@
 #ifndef __SERIALOUTPUT_H__
 #define __SERIALOUTPUT_H__
 
+#include "Output.h"
 
-class SerialOutput
+class SerialOutput : public Output
 {
 //variables
 public:
@@ -21,7 +22,9 @@ private:
 public:
 	SerialOutput();
 	
-	static void init();
+	virtual byte onReceive(int value, Sensor * sensor);
+	
+	virtual byte onCreate();
 protected:
 private:
 

@@ -9,12 +9,13 @@
 #ifndef __ICONDITION_H__
 #define __ICONDITION_H__
 
+#include "Arduino.h"
 
 class ICondition
 {
 //functions
 public:
-	virtual bool check(int value) = 0;
+	virtual void check(int value) = 0;
 
 };
 

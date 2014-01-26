@@ -24,26 +24,29 @@ typedef struct Rule Rule;
 class Sensor : public ISensor, public Object
 {
 	private:
-	Rule mRules[];
-	byte mRulesCnt;
-	byte mPin;
-	byte mIdentifier;
+		Rule mRules[];
+		byte mRulesCnt;
+		byte mPin;
+		byte mIdentifier;
+	
 	//functions
 	private:
-	bool isRulesFull();
-	protected:
-	virtual char * toString();
-	virtual int measureValue() = 0;
-	public:
-	Sensor(byte pin)
-	{
-		mPin = pin;
-	}
-
-	virtual byte addRule(Condition * condition, Output * output);
-	virtual byte addRule(Rule rule);
+		bool isRulesFull();
 	
-	virtual byte measure();
+		protected:
+		virtual char * toString();
+		virtual int measureValue() = 0;
+	
+	public:
+		Sensor(byte pin)
+		{
+			mPin = pin;
+		}
+
+		virtual byte addRule(Condition * condition, Output * output);
+		virtual byte addRule(Rule rule);
+		
+		virtual byte measure();
 	
 	
 };

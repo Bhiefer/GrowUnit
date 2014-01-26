@@ -18,3 +18,13 @@ byte Output::onCreate()
 	
 }
 
+byte Output::onMeasured()
+{
+	
+}
+
+char * Output::toString()
+{
+	return "Output";
+}
+

@@ -14,28 +14,38 @@ by David A. Mellis
 */
 
 #include <SPI.h>
-#include <Ethernet.h>
-#include "LightSensor.h"
+#include "Configuration.h"
 
-// Enter a MAC address for your controller below.
-// Newer Ethernet shields have a MAC address printed on a sticker on the shield
-byte mac[] = {  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-byte ip[] = { 192, 168, 1, 88 };
-IPAddress server(192,168,1,102); // Google
-
-LightSensor sensor(1);
-
-// Initialize the Ethernet client library
-// with the IP address and port of the server
-// that you want to connect to (port 80 is default for HTTP):
-EthernetClient client;
+// // Enter a MAC address for your controller below.
+// // Newer Ethernet shields have a MAC address printed on a sticker on the shield
+// byte mac[] = {  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+// byte ip[] = { 192, 168, 1, 88 };
+// IPAddress server(192,168,1,102); // Google
+// 
+// LightSensor sensor(1);
+// 
+// // Initialize the Ethernet client library
+// // with the IP address and port of the server
+// // that you want to connect to (port 80 is default for HTTP):
+// EthernetClient client;
 
 void setup() 
 {
-	// Open serial communications and wait for port to open:
 	Serial.begin(9600);
-
-
+	delay(2000);
+	Serial.println("Started");
+	
+// 	for(int i = 0; i < outputsSize; i++)
+// 	{
+// 		outputs[i]->onCreate();	
+// 	}
+// 	
+	for(int i = 0; i < mappingSize; i++)
+	{
+		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);	
+	}
+	
+	
 	
 // 	Ethernet.begin(mac, ip); 
 // 
@@ -66,21 +76,27 @@ void setup()
 
 void loop()
 {
-	// if there are incoming bytes available
-	// from the server, read them and print them:
-	if (client.available()) {
-		char c = client.read();
-		Serial.print(c);
-	}
+	Serial.println("Loop");
+	Serial.println("pppp");
 
-	// if the server's disconnected, stop the client:
-	if (!client.connected()) {
-		Serial.println();
-		Serial.println("disconnecting.");
-		client.stop();
-
-		// do nothing forevermore:
-		for(;;)
-		;
-	}
+	sensors[0]->measure();
+	
+	delay(100);
+// 	// if there are incoming bytes available
+// 	// from the server, read them and print them:
+// 	if (client.available()) {
+// 		char c = client.read();
+// 		Serial.print(c);
+// 	}
+// 
+// 	// if the server's disconnected, stop the client:
+// 	if (!client.connected()) {
+// 		Serial.println();
+// 		Serial.println("disconnecting.");
+// 		client.stop();
+// 
+// 		// do nothing forevermore:
+// 		for(;;)
+// 		;
+// 	}
 }

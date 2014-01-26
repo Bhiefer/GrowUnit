@@ -20,6 +20,9 @@ class Output : public IOutput, public Object
 	public:
 	virtual byte onReceive(int value, Sensor * sensor) = 0;
 	virtual byte onCreate();
+	virtual byte onMeasured();
+	
+	virtual char * toString();
 
 }; //Output
 

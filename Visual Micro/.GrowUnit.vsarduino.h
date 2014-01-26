@@ -7,6 +7,7 @@
 
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
+#define _VMDEBUG 1
 #define ARDUINO 101
 #define ARDUINO_MAIN
 #define F_CPU 16000000L
@@ -20,6 +21,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard\pins_arduino.h" 
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino\arduino.h"
 #include "C:\Development\Arduino\projects\GrowUnit\GrowUnit.ino"
+#include "C:\Development\Arduino\projects\GrowUnit\AlwaysCondition.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\AlwaysCondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\AnalogSensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\AnalogSensor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Condition.cpp"
@@ -32,6 +35,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\ISensor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\LightSensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\LightSensor.h"
+#include "C:\Development\Arduino\projects\GrowUnit\MemoryFree.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\MemoryFree.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Object.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Object.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Output.cpp"
