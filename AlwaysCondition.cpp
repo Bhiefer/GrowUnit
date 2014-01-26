@@ -10,7 +10,7 @@
 
 
 
-bool AlwaysCondition::check( int value )
+bool AlwaysCondition::check( int16_t value )
 {
 	
 }

@@ -9,7 +9,8 @@
 #include "AnalogSensor.h"
 #include "Arduino.h"
 
-int AnalogSensor::measureValue()
+int16_t AnalogSensor::measureValue()
 {
+	Serial.println(mPin);
 	return analogRead(mPin);
 }

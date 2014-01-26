@@ -15,7 +15,7 @@ class ICondition
 {
 //functions
 public:
-	virtual bool check(int value) = 0;
+	virtual bool check(int16_t value) = 0;
 
 };
 

@@ -22,9 +22,9 @@ private:
 public:
 	SerialOutput();
 	
-	virtual byte onReceive(int value, Sensor * sensor);
+	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
 	
-	virtual byte onCreate();
+	virtual uint8_t onCreate();
 protected:
 private:
 

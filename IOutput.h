@@ -18,9 +18,9 @@ class IOutput
 {
 	//functions
 	public:
-	virtual byte onReceive(int value, Sensor * sensor) = 0;
-	virtual byte onCreate() = 0;
-	virtual byte onMeasured() = 0;
+	virtual uint8_t onReceive(int16_t value, Sensor * sensor) = 0;
+	virtual uint8_t onCreate() = 0;
+	virtual uint8_t onMeasured() = 0;
 };
 
 #endif //__IOUTPUT_H__

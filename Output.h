@@ -18,9 +18,9 @@ class Output : public IOutput, public Object
 	
 	//functions
 	public:
-	virtual byte onReceive(int value, Sensor * sensor) = 0;
-	virtual byte onCreate();
-	virtual byte onMeasured();
+	virtual uint8_t onReceive(int16_t value, Sensor * sensor) = 0;
+	virtual uint8_t onCreate();
+	virtual uint8_t onMeasured();
 	
 	virtual char * toString();
 

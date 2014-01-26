@@ -16,15 +16,15 @@ class AnalogSensor : public Sensor
 	//variables
 	public:
 	protected:
-	byte mPin;
+	uint8_t mPin;
 	private:
 
 	//functions
 	public:
-	AnalogSensor(byte pin) : Sensor(pin)
+	AnalogSensor(uint8_t pin) : Sensor(pin)
 	{}
 	protected:
-	virtual int measureValue();
+	virtual int16_t measureValue();
 	private:
 
 }; //AnalogSensor

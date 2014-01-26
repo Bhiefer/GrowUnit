@@ -14,12 +14,12 @@
 
 class Condition : public ICondition, public Object
 {
-	byte mByte;
+	uint8_t mByte;
 	//functions
 	public:
 	Condition() { mByte = 0;}
 	
-	virtual bool check(int value);
+	virtual bool check(int16_t value);
 	
 	virtual char * toString();
 }; //Condition

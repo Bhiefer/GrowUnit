@@ -41,6 +41,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\Object.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Output.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Output.h"
+#include "C:\Development\Arduino\projects\GrowUnit\Pcd8544Output.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\Pcd8544Output.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Sensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Sensor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\SerialOutput.cpp"

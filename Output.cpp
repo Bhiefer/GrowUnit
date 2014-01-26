@@ -8,17 +8,17 @@
 #include "Output.h"
 
 // functions
-byte Output::onReceive(int value, Sensor * sensor)
+uint8_t Output::onReceive(int16_t value, Sensor * sensor)
 {
 	
 }
 
-byte Output::onCreate()
+uint8_t Output::onCreate()
 {
 	
 }
 
-byte Output::onMeasured()
+uint8_t Output::onMeasured()
 {
 	
 }

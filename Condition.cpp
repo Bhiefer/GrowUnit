@@ -8,7 +8,7 @@
 
 #include "Condition.h"
 
-bool Condition::check(int value)
+bool Condition::check(int16_t value)
 {
 	Serial.println("Check");
 	return true;

@@ -19,9 +19,9 @@ class Sensor : public ISensor, public Object
 {
 	private:
 		Rule mRules[MAX_RULES_COUNT];
-		byte mRulesCnt;
-		byte mPin;
-		byte mIdentifier;
+		uint8_t mRulesCnt;
+		uint8_t mPin;
+		uint8_t mIdentifier;
 	
 	//functions
 	private:
@@ -29,18 +29,18 @@ class Sensor : public ISensor, public Object
 	
 		protected:
 		virtual char * toString();
-		virtual int measureValue() = 0;
+		virtual int16_t measureValue() = 0;
 	
 	public:
-		Sensor(byte pin)
+		Sensor(uint8_t pin)
 		{
 			mPin = pin;
 		}
 
-		virtual byte addRule(Condition * condition, Output * output);
-		virtual byte addRule(Rule rule);
+		virtual uint8_t addRule(Condition * condition, Output * output);
+		virtual uint8_t addRule(Rule rule);
 		
-		virtual byte measure();
+		virtual uint8_t measure();
 	
 	
 };

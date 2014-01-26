@@ -11,13 +11,12 @@
 #include "Condition.h"
 
 // functions
-byte Sensor::measure()//virtual
+uint8_t Sensor::measure()//virtual
 {
-	Serial.println("measure");
-	for(int i = 0; i < mRulesCnt; i++)
+	for(uint8_t i = 0; i < mRulesCnt; i++)
 	{
 		Rule r = mRules[i];
-		int value = measureValue();
+		int16_t value = measureValue();
 		
 		if(r.condition->check(value))
 		{
@@ -27,7 +26,7 @@ byte Sensor::measure()//virtual
 	}
 }
 
-byte Sensor::addRule(Rule rule)
+uint8_t Sensor::addRule(Rule rule)
 {
 	if(isRulesFull())
 	{
@@ -38,7 +37,7 @@ byte Sensor::addRule(Rule rule)
 	mRulesCnt++;
 }
 
-byte Sensor::addRule(Condition * condition, Output * output)
+uint8_t Sensor::addRule(Condition * condition, Output * output)
 {
 	if(isRulesFull())
 	{

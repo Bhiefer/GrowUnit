@@ -18,8 +18,8 @@ class ISensor
 {
 	//functions
 	public:
-	virtual byte addRule(Condition * condition, Output * output) = 0;
-	virtual byte measure() = 0;
+	virtual uint8_t addRule(Condition * condition, Output * output) = 0;
+	virtual uint8_t measure() = 0;
 
 }; //ISensor
 
