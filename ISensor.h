@@ -20,6 +20,7 @@ class ISensor
 	public:
 	virtual uint8_t addRule(Condition * condition, Output * output) = 0;
 	virtual uint8_t measure() = 0;
+	virtual uint8_t onCreate() = 0;
 
 }; //ISensor
 

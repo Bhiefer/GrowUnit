@@ -42,6 +42,11 @@ void setup()
 		outputs[i]->onCreate();
 	}
 	
+	for(uint8_t i = 0; i < sensorsSize; i++)
+	{
+		sensors[i]->onCreate();
+	}
+	
 	for(uint8_t i = 0; i < mappingSize; i++)
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);

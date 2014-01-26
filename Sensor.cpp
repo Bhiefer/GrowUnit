@@ -60,3 +60,8 @@ char * Sensor::toString()
 	return "Abstract sensor";
 }
 
+uint8_t Sensor::onCreate()
+{
+	
+}
+

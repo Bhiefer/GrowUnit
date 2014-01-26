@@ -26,9 +26,18 @@ uint8_t Pcd8544Output::onReceive( int16_t value, Sensor * sensor )
 uint8_t Pcd8544Output::onMeasured()
 {
 	clearDisplay();
+	
+	fillRect(0, 0, width(), 16, BLACK);
+	
+	
+	setTextSize(2);
+	setTextColor(WHITE);
+	setCursor(0,1);
+	println("Info");
+	
 	setTextSize(1);
 	setTextColor(BLACK);
-	setCursor(0,0);
+	print("Svetlo:");
 	println(mLight);
 	display();
 }

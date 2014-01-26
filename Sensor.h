@@ -41,7 +41,7 @@ class Sensor : public ISensor, public Object
 		virtual uint8_t addRule(Rule rule);
 		
 		virtual uint8_t measure();
-	
+		virtual uint8_t onCreate();
 	
 };
 
