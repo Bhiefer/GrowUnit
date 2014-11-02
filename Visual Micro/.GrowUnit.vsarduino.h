@@ -7,7 +7,6 @@
 
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
-#define _VMDEBUG 1
 #define ARDUINO 101
 #define ARDUINO_MAIN
 #define F_CPU 16000000L
@@ -31,12 +30,18 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\Constants.h"
 #include "C:\Development\Arduino\projects\GrowUnit\DigitalSensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\DigitalSensor.h"
+#include "C:\Development\Arduino\projects\GrowUnit\EthernetOutput.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\EthernetOutput.h"
 #include "C:\Development\Arduino\projects\GrowUnit\ICondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\IObject.h"
 #include "C:\Development\Arduino\projects\GrowUnit\IOutput.h"
+#include "C:\Development\Arduino\projects\GrowUnit\IPrecondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\ISensor.h"
+#include "C:\Development\Arduino\projects\GrowUnit\IValueProcessor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\LightSensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\LightSensor.h"
+#include "C:\Development\Arduino\projects\GrowUnit\MedianatorFive.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\MedianatorFive.h"
 #include "C:\Development\Arduino\projects\GrowUnit\MemoryFree.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\MemoryFree.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Object.cpp"
@@ -45,8 +50,16 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\Output.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Pcd8544Output.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Pcd8544Output.h"
+#include "C:\Development\Arduino\projects\GrowUnit\Precondition.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\Precondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Sensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Sensor.h"
 #include "C:\Development\Arduino\projects\GrowUnit\SerialOutput.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\SerialOutput.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Structs.h"
+#include "C:\Development\Arduino\projects\GrowUnit\TimePrecondition.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\TimePrecondition.h"
+#include "C:\Development\Arduino\projects\GrowUnit\Timer.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\Timer.h"
+#include "C:\Development\Arduino\projects\GrowUnit\ValueProcessor.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\ValueProcessor.h"

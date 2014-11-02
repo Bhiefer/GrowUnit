@@ -35,6 +35,7 @@ class Sensor : public ISensor, public Object
 		Sensor(uint8_t pin)
 		{
 			mPin = pin;
+			mRulesCnt = 0;
 		}
 
 		virtual uint8_t addRule(Condition * condition, Output * output);
@@ -44,7 +45,7 @@ class Sensor : public ISensor, public Object
 		
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();
-	
+		virtual uint8_t getIdentifier();
 };
 
 #endif //__SENSOR_H__

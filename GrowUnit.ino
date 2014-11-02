@@ -16,6 +16,7 @@ by David A. Mellis
 #include <Adafruit_GFX.h>
 #include <Adafruit_PCD8544.h>
 #include <SPI.h>
+#include <Ethernet.h>
 #include "Configuration.h"
 
 static int16_t counter;
@@ -31,7 +32,7 @@ static int16_t counter;
 // // Initialize the Ethernet client library
 // // with the IP address and port of the server
 // // that you want to connect to (port 80 is default for HTTP):
-// EthernetClient client;
+// 
 
 void setup()
 {
@@ -51,33 +52,6 @@ void setup()
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);
 	}
-	
-	
-	// 	Ethernet.begin(mac, ip);
-	//
-	// 	// start the Ethernet connection:
-	// 	//if (Ethernet.begin(mac, ip) == 0)
-	// 	//{
-	// 		//Serial.println("Failed to configure Ethernet using DHCP");
-	// 		//// no point in carrying on, so do nothing forevermore:
-	// 		//for(;;)
-	// 		//;
-	// 	//}
-	// 	// give the Ethernet shield a second to initialize:
-	// 	delay(1000);
-	// 	Serial.println("connecting...");
-	//
-	// 	// if you get a connection, report back via serial:
-	// 	if (client.connect(server, 80)) {
-	// 		Serial.println("connected");
-	// 		// Make a HTTP request:
-	// 		client.println("GET /growagregator/index.php HTTP/1.0");
-	// 		client.println();
-	// 	}
-	// 	else {
-	// 		// if you didn't get a connection to the server:
-	// 		Serial.println("connection failed");
-	// 	}
 }
 
 void loop()

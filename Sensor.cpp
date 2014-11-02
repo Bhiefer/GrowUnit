@@ -70,3 +70,8 @@ uint8_t Sensor::getPin()
 	return mPin;	
 }
 
+uint8_t Sensor::getIdentifier()
+{
+	return mIdentifier;	
+}
+

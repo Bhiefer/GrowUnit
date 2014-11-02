@@ -12,6 +12,7 @@
 class Sensor;
 class Condition;
 class Output;
+class Precondition;
 
 struct Mapping
 {
@@ -29,6 +30,22 @@ struct Rule
 };
 
 typedef struct Rule Rule;
+
+struct Measurement
+{
+	Sensor * sensor;
+	int16_t value;
+};
+
+typedef struct Measurement Measurement;
+
+struct SensorPrecondition
+{
+	Precondition * precondition;
+	Sensor * sensor;
+};
+
+typedef struct Measurement Measurement;
 
 
 #endif /* STRUCTS_H_ */

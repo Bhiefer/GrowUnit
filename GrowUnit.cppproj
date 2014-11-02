@@ -53,7 +53,6 @@
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
-            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -71,6 +70,10 @@
             <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
@@ -89,7 +92,6 @@
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
-            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -107,6 +109,10 @@
             <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
@@ -272,7 +278,6 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
-            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -290,6 +295,10 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
             <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
@@ -308,7 +317,6 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
           <ListValues>
             <Value>__AVR_ATmega328p__</Value>
             <Value>__AVR_ATmega328P__</Value>
-            <Value>_VMDEBUG=1</Value>
             <Value>ARDUINO=101</Value>
             <Value>ARDUINO_MAIN</Value>
             <Value>F_CPU=16000000L</Value>
@@ -326,6 +334,10 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
             <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
             <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
+            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
             <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
@@ -507,16 +519,40 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
     <Compile Include="DigitalSensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="EthernetOutput.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="EthernetOutput.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ICondition.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Configuration.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="IPrecondition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="IValueProcessor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MedianatorFive.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MedianatorFive.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Pcd8544Output.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Pcd8544Output.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Precondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Precondition.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Structs.h">
@@ -571,6 +607,24 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="SerialOutput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TimePrecondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="TimePrecondition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ValueProcessor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ValueProcessor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Visual Micro\.GrowUnit.vsarduino.h">

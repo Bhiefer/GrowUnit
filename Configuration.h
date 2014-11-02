@@ -15,12 +15,15 @@
 #include "Structs.h"
 #include "Pcd8544Output.h"
 #include "DigitalSensor.h"
+#include "TimePrecondition.h"
 
 
 LightSensor lightSensor(0);
 DigitalSensor digiSensor(6);
 
 AlwaysCondition always;
+
+TimePrecondition timePrecondition(5);
 
 SerialOutput serialOutput;
 Pcd8544Output pcd8544Output(12,11,10,9,8);
@@ -36,6 +39,11 @@ static Output* outputs[] = {
 	&pcd8544Output
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
+
+static SensorPrecondition preconditions[] = {
+	{&timePrecondition, &lightSensor}
+};
+static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(SensorPrecondition);
 
 static Mapping mapping[] = {
 	{&lightSensor, &always, &serialOutput},
