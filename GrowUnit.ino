@@ -32,23 +32,29 @@ static int16_t counter;
 // // Initialize the Ethernet client library
 // // with the IP address and port of the server
 // // that you want to connect to (port 80 is default for HTTP):
-// 
+//
 
 void setup()
 {
 	counter = 0;
+	uint8_t i = 0;
 	
-	for(uint8_t i = 0; i < outputsSize; i++)
+	for(i = 0; i < outputsSize; i++)
 	{
 		outputs[i]->onCreate();
 	}
 	
-	for(uint8_t i = 0; i < sensorsSize; i++)
+	for(i = 0; i < sensorsSize; i++)
 	{
 		sensors[i]->onCreate();
 	}
 	
-	for(uint8_t i = 0; i < mappingSize; i++)
+	for(i = 0; i < preconditionsSize; i++)
+	{
+		preconditions[i].sensor->setPrecondition(preconditions[i].precondition);
+	}
+	
+	for(i = 0; i < mappingSize; i++)
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);
 	}
@@ -68,23 +74,6 @@ void loop()
 	{
 		outputs[i]->onMeasured();
 	}
-		
+	
 	delay(1000);
-	// 	// if there are incoming bytes available
-	// 	// from the server, read them and print them:
-	// 	if (client.available()) {
-	// 		char c = client.read();
-	// 		Serial.print(c);
-	// 	}
-	//
-	// 	// if the server's disconnected, stop the client:
-	// 	if (!client.connected()) {
-	// 		Serial.println();
-	// 		Serial.println("disconnecting.");
-	// 		client.stop();
-	//
-	// 		// do nothing forevermore:
-	// 		for(;;)
-	// 		;
-	// 	}
 }

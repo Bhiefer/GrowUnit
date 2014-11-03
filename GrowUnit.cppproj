@@ -504,6 +504,12 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
     <Compile Include="AlwaysCondition.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="AndCondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AndCondition.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Condition.cpp">
       <SubType>compile</SubType>
     </Compile>

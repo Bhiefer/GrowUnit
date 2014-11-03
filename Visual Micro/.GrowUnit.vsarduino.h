@@ -24,6 +24,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include "C:\Development\Arduino\projects\GrowUnit\AlwaysCondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\AnalogSensor.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\AnalogSensor.h"
+#include "C:\Development\Arduino\projects\GrowUnit\AndCondition.cpp"
+#include "C:\Development\Arduino\projects\GrowUnit\AndCondition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Condition.cpp"
 #include "C:\Development\Arduino\projects\GrowUnit\Condition.h"
 #include "C:\Development\Arduino\projects\GrowUnit\Configuration.h"

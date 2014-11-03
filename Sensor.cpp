@@ -13,6 +13,11 @@
 // functions
 uint8_t Sensor::measure()//virtual
 {
+	if(!mPrecondition->check())
+	{
+		return RC_PRECONDITION_NOT_MET;
+	}
+	
 	for(uint8_t i = 0; i < mRulesCnt; i++)
 	{
 		Rule r = mRules[i];
@@ -22,7 +27,6 @@ uint8_t Sensor::measure()//virtual
 		{
 			r.output->onReceive(value, this);
 		}
-		
 	}
 }
 
@@ -73,5 +77,10 @@ uint8_t Sensor::getPin()
 uint8_t Sensor::getIdentifier()
 {
 	return mIdentifier;	
+}
+
+uint8_t Sensor::setPrecondition( Precondition * precondition )
+{
+	mPrecondition = precondition;
 }
 
