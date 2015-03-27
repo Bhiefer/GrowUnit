@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectVersion>6.1</ProjectVersion>
+    <ProjectVersion>6.2</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
     <ProjectGuid>{07b459b4-8d76-4638-bc6d-a459ba2d616b}</ProjectGuid>
     <avrdevice>atmega328p</avrdevice>
@@ -18,8 +18,7 @@
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
-    <OverrideVtorValue>
-    </OverrideVtorValue>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <ProgFlashFromRam>true</ProgFlashFromRam>
     <RamSnippetAddress>0x20000000</RamSnippetAddress>
@@ -34,102 +33,125 @@
         <documentation help="" />
         <offline-documentation help="" />
         <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.10.1" />
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <preserveEEPROM>true</preserveEEPROM>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
       <AvrGccCpp>
-        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
-        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcc.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcc.compiler.symbols.DefSymbols>
-        <avrgcc.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX\utility</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
-          </ListValues>
-        </avrgcc.compiler.directories.IncludePaths>
-        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
-        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcccpp.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcccpp.compiler.symbols.DefSymbols>
-        <avrgcccpp.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX\utility</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
-            <Value>
-            </Value>
-          </ListValues>
-        </avrgcccpp.compiler.directories.IncludePaths>
-        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
-        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
-        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
-        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
-        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
-        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
-        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-      </AvrGccCpp>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=155</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/</Value>
+      <Value>c:/Development/Arduino/projects/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
+      <Value>../../GrowUnit</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=155</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/</Value>
+      <Value>c:/Development/Arduino/projects/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
+      <Value>../../GrowUnit</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
     </ToolchainSettings>
     <VisualMicroSettings>
       <VisualMicroSettings>
@@ -159,8 +181,14 @@ build.core=arduino
 build.variant=standard
 runtime.ide.path=c:\Development\Arduino\arduino-1.5.5\
 build.system.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\system
-runtime.ide.version=150
+runtime.ide.version=155
 originalid=uno
+tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
+tools.atprogram.cmd.setwinpath=true
+tools.atprogram.program.params.verbose=-v
+tools.atprogram.program.params.quiet=-q
+tools.atprogram.program.pattern="{cmd.path}" -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.atprogram.program.xpattern="{cmd.path}" {AVRSTUDIO_BACKEND_CONNECTION} -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
 version=1.5.5
 compiler.c.cmd=avr-gcc
 compiler.c.flags=-c -g -Os -w -ffunction-sections -fdata-sections -MMD
@@ -207,9 +235,8 @@ tools.avrdude.bootloader.params.quiet=-q -q
 tools.avrdude.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloader.verbose} -p{build.mcu} -c{protocol} {program.extra_params} "-Uflash:w:{runtime.ide.path}/hardware/arduino/avr/bootloaders/{bootloader.file}:i" -Ulock:w:{bootloader.lock_bits}:m
 build.usb_manufacturer=
 build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
-vm.platform.root.path=C:\Development\Arduino\VisualMicro\Micro Platforms\arduino15x
-vm.core.include=arduino.h
-ide.hint=Arduino 1.5 Ide
+vm.platform.root.path=C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino15x
+ide.hint=Arduino 1.5 Ide also works with 1.6
 ide.location.key=Arduino15x
 ide.location.ide.winreg=Arduino 1.5.x Application
 ide.location.sketchbook.winreg=Arduino 1.5.x Sketchbook
@@ -234,23 +261,33 @@ software=ARDUINO
 ssh.user.name=root
 ssh.user.default.password=arduino
 ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}
 ide.appid=arduino15x
 location.sketchbook=c:\Development\Arduino\projects\
+vm.core.include=arduino.h
 vm.boardsource.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr
+runtime.platform.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr
 vm.platformname.name=avr
 build.arch=AVR
+vm.runtime.compiler.showwarnings=false
+serial.port.file=COM3
+serial.port=COM3
 compiler.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr\bin\
-includes= -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr" 
-build.path=C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno
+includes= -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard"  -I"c:\Development\Arduino\projects\libraries\Adafruit_GFX"  -I"c:\Development\Arduino\projects\libraries\Adafruit_PCD8544"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\DS3231RTC"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\Wire"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Time"  -I"c:\Development\Arduino\arduino-1.5.5\libraries"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries"  -I"C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers"  -I"c:\Development\Arduino\projects\libraries"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\Wire\utility"
+build.path=C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno
 build.project_name=GrowUnit
 build.variant.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard
 archive_file=core.a
-object_file=C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o
-source_file=c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility\w5100.cpp
+object_file=C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\Time.cpp.o
+source_file=c:\Development\Arduino\arduino-1.5.5\libraries\Time\Time.cpp
+object_files="C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AlwaysCondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AnalogSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AndCondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Condition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\DigitalSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\EthernetOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\GrowUnit.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\LightSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\MedianatorFive.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\MemoryFree.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Object.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Pcd8544Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Precondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Sensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SerialOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SoilSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\TimePrecondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Timer.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\ValueProcessor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_GFX\glcdfont.c.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_GFX\Adafruit_GFX.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_PCD8544\Adafruit_PCD8544.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SPI\SPI.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Dhcp.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Dns.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Ethernet.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetClient.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetServer.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetUdp.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\avr\utility\socket.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\DS3231RTC\DS3231RTC.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Wire\Wire.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Wire\utility\twi.c.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\DateStrings.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\Time.cpp.o" 
 build.architecture=avr
 vmresolved.compiler.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr\bin\
 vmresolved.tools.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr
-object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\AnalogSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Condition.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\GrowUnit.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\LightSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Object.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Sensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\SerialOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\SPI\SPI.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Dhcp.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Dns.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Ethernet.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetClient.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetServer.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetUdp.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\socket.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o" 
+upload.verbose=-q -q
+path=c:\Development\Arduino\arduino-1.5.5\hardware\tools
+cmd.path={runtime.ide.path}/hardware/tools/avr/bin/avrdude
+config.path={runtime.ide.path}/hardware/tools/avr/etc/avrdude.conf
 </arduino.board.property_bag>
         <arduino.build.mcu>atmega328p</arduino.build.mcu>
         <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
@@ -261,100 +298,124 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
         <visualmicro.application.name>arduino15x</visualmicro.application.name>
         <visualmicro.package.name>arduino</visualmicro.package.name>
         <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM3</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
+    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGccCpp>
-        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
-        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcc.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcc.compiler.symbols.DefSymbols>
-        <avrgcc.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX\utility</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
-          </ListValues>
-        </avrgcc.compiler.directories.IncludePaths>
-        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
-        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
-        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
-        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
-        <avrgcccpp.compiler.symbols.DefSymbols>
-          <ListValues>
-            <Value>__AVR_ATmega328p__</Value>
-            <Value>__AVR_ATmega328P__</Value>
-            <Value>ARDUINO=101</Value>
-            <Value>ARDUINO_MAIN</Value>
-            <Value>F_CPU=16000000L</Value>
-            <Value>__AVR__</Value>
-            <Value>__cplusplus</Value>
-          </ListValues>
-        </avrgcccpp.compiler.symbols.DefSymbols>
-        <avrgcccpp.compiler.directories.IncludePaths>
-          <ListValues>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_GFX\utility</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544</Value>
-            <Value>c:\Development\Arduino\projects\libraries\Adafruit_PCD8544\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src\utility</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr</Value>
-            <Value>c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\include\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\avr\</Value>
-            <Value>c:\development\arduino\arduino-1.5.5\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
-            <Value>
-            </Value>
-          </ListValues>
-        </avrgcccpp.compiler.directories.IncludePaths>
-        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
-        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
-        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
-        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
-        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
-        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
-        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
-        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
-      </AvrGccCpp>
+  <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=155</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/</Value>
+      <Value>c:/Development/Arduino/projects/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
+      <Value>../../GrowUnit</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=155</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value></Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/</Value>
+      <Value>c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/</Value>
+      <Value>c:/Development/Arduino/projects/libraries</Value>
+      <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Time</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
+      <Value>../../GrowUnit</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
     </ToolchainSettings>
     <VisualMicroSettings>
       <VisualMicroSettings>
@@ -384,8 +445,14 @@ build.core=arduino
 build.variant=standard
 runtime.ide.path=c:\Development\Arduino\arduino-1.5.5\
 build.system.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\system
-runtime.ide.version=150
+runtime.ide.version=155
 originalid=uno
+tools.atprogram.cmd.path=%AVRSTUDIO_EXE_PATH%\atbackend\atprogram
+tools.atprogram.cmd.setwinpath=true
+tools.atprogram.program.params.verbose=-v
+tools.atprogram.program.params.quiet=-q
+tools.atprogram.program.pattern="{cmd.path}" -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
+tools.atprogram.program.xpattern="{cmd.path}" {AVRSTUDIO_BACKEND_CONNECTION} -d {build.mcu} {program.verbose} {program.extra_params} program -c -f "{build.path}\{build.project_name}.hex"
 version=1.5.5
 compiler.c.cmd=avr-gcc
 compiler.c.flags=-c -g -Os -w -ffunction-sections -fdata-sections -MMD
@@ -432,9 +499,8 @@ tools.avrdude.bootloader.params.quiet=-q -q
 tools.avrdude.bootloader.pattern="{cmd.path}" "-C{config.path}" {bootloader.verbose} -p{build.mcu} -c{protocol} {program.extra_params} "-Uflash:w:{runtime.ide.path}/hardware/arduino/avr/bootloaders/{bootloader.file}:i" -Ulock:w:{bootloader.lock_bits}:m
 build.usb_manufacturer=
 build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
-vm.platform.root.path=C:\Development\Arduino\VisualMicro\Micro Platforms\arduino15x
-vm.core.include=arduino.h
-ide.hint=Arduino 1.5 Ide
+vm.platform.root.path=C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino15x
+ide.hint=Arduino 1.5 Ide also works with 1.6
 ide.location.key=Arduino15x
 ide.location.ide.winreg=Arduino 1.5.x Application
 ide.location.sketchbook.winreg=Arduino 1.5.x Sketchbook
@@ -459,23 +525,33 @@ software=ARDUINO
 ssh.user.name=root
 ssh.user.default.password=arduino
 ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}
 ide.appid=arduino15x
 location.sketchbook=c:\Development\Arduino\projects\
+vm.core.include=arduino.h
 vm.boardsource.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr
+runtime.platform.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr
 vm.platformname.name=avr
 build.arch=AVR
+vm.runtime.compiler.showwarnings=false
+serial.port.file=COM3
+serial.port=COM3
 compiler.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr\bin\
-includes= -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr" 
-build.path=C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno
+includes= -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard"  -I"c:\Development\Arduino\projects\libraries\Adafruit_GFX"  -I"c:\Development\Arduino\projects\libraries\Adafruit_PCD8544"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\SPI"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\src"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\DS3231RTC"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\Wire"  -I"c:\Development\Arduino\arduino-1.5.5\libraries\Time"  -I"c:\Development\Arduino\arduino-1.5.5\libraries"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries"  -I"C:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers"  -I"c:\Development\Arduino\projects\libraries"  -I"c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\libraries\Wire\utility"
+build.path=C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno
 build.project_name=GrowUnit
 build.variant.path=c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard
 archive_file=core.a
-object_file=C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o
-source_file=c:\Development\Arduino\arduino-1.5.5\libraries\Ethernet\arch\avr\utility\w5100.cpp
+object_file=C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\Time.cpp.o
+source_file=c:\Development\Arduino\arduino-1.5.5\libraries\Time\Time.cpp
+object_files="C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AlwaysCondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AnalogSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\AndCondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Condition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\DigitalSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\EthernetOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\GrowUnit.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\LightSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\MedianatorFive.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\MemoryFree.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Object.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Pcd8544Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Precondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Sensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SerialOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SoilSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\TimePrecondition.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Timer.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\ValueProcessor.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_GFX\glcdfont.c.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_GFX\Adafruit_GFX.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Adafruit_PCD8544\Adafruit_PCD8544.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\SPI\SPI.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Dhcp.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Dns.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\Ethernet.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetClient.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetServer.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Ethernet\EthernetUdp.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\avr\utility\socket.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\DS3231RTC\DS3231RTC.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Wire\Wire.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Wire\utility\twi.c.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\DateStrings.cpp.o" "C:\Users\Bhiefer\AppData\Local\V.Micro\Arduino\Builds\GrowUnit\uno\Time\Time.cpp.o" 
 build.architecture=avr
 vmresolved.compiler.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr\bin\
 vmresolved.tools.path=c:\Development\Arduino\arduino-1.5.5\hardware\tools\avr
-object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\AnalogSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Condition.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\GrowUnit.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\LightSensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Object.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Output.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\Sensor.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\SerialOutput.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\SPI\SPI.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Dhcp.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Dns.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\Ethernet.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetClient.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetServer.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\src\EthernetUdp.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\socket.cpp.o" "C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\avr\utility\w5100.cpp.o" 
+upload.verbose=-q -q
+path=c:\Development\Arduino\arduino-1.5.5\hardware\tools
+cmd.path={runtime.ide.path}/hardware/tools/avr/bin/avrdude
+config.path={runtime.ide.path}/hardware/tools/avr/etc/avrdude.conf
 </arduino.board.property_bag>
         <arduino.build.mcu>atmega328p</arduino.build.mcu>
         <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
@@ -486,8 +562,10 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
         <visualmicro.application.name>arduino15x</visualmicro.application.name>
         <visualmicro.package.name>arduino</visualmicro.package.name>
         <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM3</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
+    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <ItemGroup>
     <None Include="GrowUnit.ino">
@@ -519,6 +597,36 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
     <Compile Include="Constants.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Data.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Data.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DHT.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtHumSensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtHumSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtSensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtTempSensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DhtTempSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="DigitalSensor.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -543,6 +651,12 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
     <Compile Include="IValueProcessor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LessThanCondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LessThanCondition.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MedianatorFive.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -559,6 +673,18 @@ object_files="C:\Users\Bhiefer\AppData\Local\VMicro\Arduino\Builds\GrowUnit\uno\
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Precondition.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RelayOutput.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="RelayOutput.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SoilSensor.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SoilSensor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Structs.h">

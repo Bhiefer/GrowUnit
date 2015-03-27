@@ -17,7 +17,15 @@ by David A. Mellis
 #include <Adafruit_PCD8544.h>
 #include <SPI.h>
 #include <Ethernet.h>
+#include <DS3231RTC.h>
+#include <Wire.h>
+#include <Time.h>
+#include <ArduinoJson.h>
+#include <JsonGenerator.h>
 #include "Configuration.h"
+#include "Timer.h"
+#include "Data.h"
+
 
 static int16_t counter;
 
@@ -58,10 +66,14 @@ void setup()
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);
 	}
+	
 }
 
 void loop()
 {
+	
+	Data data;
+	
 	Serial.print("Loop ");
 	Serial.println(counter++);
 

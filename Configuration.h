@@ -16,39 +16,50 @@
 #include "Pcd8544Output.h"
 #include "DigitalSensor.h"
 #include "TimePrecondition.h"
+#include "SoilSensor.h"
+#include "DhtHumSensor.h"
+#include "RelayOutput.h"
+#include "LessThanCondition.h"
 
 
-LightSensor lightSensor(0);
-DigitalSensor digiSensor(6);
+// LightSensor lightSensor(0);
+//SoilSensor soilSensor(0);
+// DigitalSensor digiSensor(6);
+DhtHumSensor dhtSensor(12);
 
 AlwaysCondition always;
+LessThanCondition lessThan(800);
 
 TimePrecondition timePrecondition(5);
 
+RelayOutput relayOutput(13, 3);
 SerialOutput serialOutput;
-Pcd8544Output pcd8544Output(12,11,10,9,8);
+//Pcd8544Output pcd8544Output(12,11,10,9,8);
 
 static Sensor* sensors[] = {
-	&lightSensor,
-	&digiSensor
+	&dhtSensor,
+//	&lightSensor,
+//  &soilSensor,
+//	&digiSensor
 };
 static uint8_t sensorsSize = sizeof(sensors)/sizeof(Sensor*);
 
 static Output* outputs[] = {
 	&serialOutput,
-	&pcd8544Output
+	&relayOutput
+//	&pcd8544Output
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
 static SensorPrecondition preconditions[] = {
-	{&timePrecondition, &lightSensor}
+	{&timePrecondition, &dhtSensor}
 };
 static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(SensorPrecondition);
 
 static Mapping mapping[] = {
-	{&lightSensor, &always, &serialOutput},
-	{&lightSensor, &always, &pcd8544Output},
-	{&digiSensor, &always, &pcd8544Output}
+	{&dhtSensor, &lessThan, &relayOutput},
+//	{&soilSensor, &always, &pcd8544Output},
+//	{&soilSensor, &always, &serialOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

@@ -47,9 +47,9 @@ uint8_t Pcd8544Output::onMeasured()
 	
 	setTextSize(1);
 	setTextColor(BLACK);
-	print("Svetlo:");
+	print("Puda:");
 	println(mLight);
-	print("Plovak:");
-	println((mSwitch == HIGH) ? "nahore" : "dole");
+//	print("Plovak:");
+//	println((mSwitch == HIGH) ? "nahore" : "dole");
 	display();
 }

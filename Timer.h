@@ -9,7 +9,9 @@
 #ifndef __TIMER_H__
 #define __TIMER_H__
 
+#include <DS3231RTC.h>
 #include "Object.h"
+
 
 class Timer : public Object
 {
@@ -17,6 +19,7 @@ class Timer : public Object
 public:
 protected:
 private:
+	DS3231RTC mRtc;
 
 //functions
 public:
@@ -25,6 +28,7 @@ public:
 	
 	uint16_t current();
 	bool checkElapsed(uint16_t last, uint16_t period);
+	float getTemp();
 	
 	virtual char * toString();
 protected:

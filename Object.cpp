@@ -14,3 +14,20 @@ void Object::writeDebug()
 {
 	Serial.println(toString());
 }
+
+bool Object::needStoring()
+{
+	return false;
+}
+
+void Object::store( JsonObject& json )
+{
+	
+}
+
+void Object::restore( JsonObject& json )
+{
+	
+}
+
+

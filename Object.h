@@ -17,7 +17,9 @@ class Object : public IObject
 	public:
 	virtual char * toString()=0;
 	virtual void writeDebug();
-
+	virtual bool needStoring();
+	virtual void store(JsonObject& json);
+	virtual void restore(JsonObject& json);
 };
 
 #endif //__OBJECT_H__

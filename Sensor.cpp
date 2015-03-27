@@ -13,7 +13,7 @@
 // functions
 uint8_t Sensor::measure()//virtual
 {
-	if(!mPrecondition->check())
+	if(mPrecondition != NULL && !mPrecondition->check())
 	{
 		return RC_PRECONDITION_NOT_MET;
 	}
@@ -66,7 +66,6 @@ char * Sensor::toString()
 
 uint8_t Sensor::onCreate()
 {
-	
 }
 
 uint8_t Sensor::getPin()
