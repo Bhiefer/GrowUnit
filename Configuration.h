@@ -51,10 +51,10 @@ static Output* outputs[] = {
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
-static Precondition* preconditions[] = {
-	&timePrecondition
-};
-static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(Precondition*);
+// static Precondition* preconditions[] = {
+// 	&timePrecondition
+// };
+// static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(Precondition*);
 
 static SensorPrecondition preconditionMapping[] = {
 	{&timePrecondition, &dhtSensor}

@@ -21,11 +21,11 @@ uint8_t Sensor::measure()//virtual
 	for(uint8_t i = 0; i < mRulesCnt; i++)
 	{
 		Rule r = mRules[i];
-		int16_t value = measureValue();
+		mMeasuredValue = measureValue();
 		
-		if(r.condition->check(value))
+		if(r.condition->check(mMeasuredValue))
 		{
-			r.output->onReceive(value, this);
+			r.output->onReceive(mMeasuredValue, this);
 		}
 	}
 }
@@ -81,5 +81,22 @@ uint8_t Sensor::getIdentifier()
 uint8_t Sensor::setPrecondition( Precondition * precondition )
 {
 	mPrecondition = precondition;
+}
+
+void Sensor::store( JsonObject& json )
+{
+	json["id"] = mIdentifier;
+	json["pin"] = mPin;
+	json["value"] = mMeasuredValue;
+	
+	if(mPrecondition != NULL)
+	{
+		mPrecondition->store(json.createNestedObject("precondition"));		
+	}
+}
+
+void Sensor::restore( JsonObject& json )
+{
+	
 }
 

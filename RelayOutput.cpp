@@ -62,6 +62,13 @@ uint8_t RelayOutput::onCreate()
 	pinMode(mPin, OUTPUT);
 }
 
+void RelayOutput::store( JsonObject& json )
+{
+	json["type"] = "relay";
+	json["pin"] = mPin;
+	json["state"] = mIsTurnedOn ? "on" : "off";
+}
+
 
 
 

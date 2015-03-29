@@ -12,3 +12,10 @@ int16_t DhtHumSensor::extractDhtValue()
 {
 	return static_cast<int16_t>(mDht.humidity * 10);
 }
+
+void DhtHumSensor::store( JsonObject& json )
+{
+	json["type"] = "dhtHumidity";
+	
+	DhtSensor::store(json);
+}

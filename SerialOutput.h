@@ -25,6 +25,8 @@ public:
 	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
 	
 	virtual uint8_t onCreate();
+	
+	virtual void store(JsonObject& json);
 protected:
 private:
 

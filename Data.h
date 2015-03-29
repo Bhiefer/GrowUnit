@@ -20,13 +20,14 @@ class Data
 public:
 protected:
 private:
-	StaticJsonBuffer<100> mBuffer;
+	StaticJsonBuffer<200> mBuffer;
 
 //functions
 public:
 	Data();
 	
 	JsonObject& getPreconditionObject(JsonObject& root);
+	JsonObject& getSensorObject(JsonObject& root);
 	JsonObject& getOutputObject(JsonObject& root);
 	
 	void store();

@@ -26,7 +26,7 @@ private:
 public:
 	DhtSensor(uint8_t pin) : Sensor(pin)
 	{
-		log = true;
+		log = false;
 	}
 protected:
 private:

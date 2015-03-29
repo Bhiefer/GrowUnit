@@ -26,6 +26,8 @@ class Sensor : public ISensor, public Object
 		
 		uint8_t mPin;
 		uint8_t mIdentifier;
+		
+		int16_t mMeasuredValue;
 	
 	//functions
 	private:
@@ -51,6 +53,9 @@ class Sensor : public ISensor, public Object
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();
 		virtual uint8_t getIdentifier();
+		
+		virtual void store(JsonObject& json);
+		virtual void restore(JsonObject& json);
 };
 
 #endif //__SENSOR_H__

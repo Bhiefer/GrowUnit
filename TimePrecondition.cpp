@@ -36,8 +36,9 @@ char * TimePrecondition::toString()
 
 void TimePrecondition::store( JsonObject& json )
 {
-	JsonObject& time = json.createNestedObject("timePrecondition");
-	time["last"] = (long)mLastTime;	
+	json["type"] = "time";
+	json["last"] = static_cast<long>(mLastTime);
+	json["period"] = static_cast<long>(mPeriod);	
 }
 
 void TimePrecondition::restore( JsonObject& json )

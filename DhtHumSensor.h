@@ -24,6 +24,8 @@ public:
 	{
 		
 	}
+	
+	virtual void store(JsonObject& json);
 protected:
 private:
 	virtual int16_t extractDhtValue();
