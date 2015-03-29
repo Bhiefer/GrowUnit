@@ -24,10 +24,9 @@ private:
 //functions
 public:
 	Timer();
-	~Timer();
 	
-	uint16_t current();
-	bool checkElapsed(uint16_t last, uint16_t period);
+	time_t current();
+	bool checkElapsed(time_t last, time_t period);
 	float getTemp();
 	
 	virtual char * toString();

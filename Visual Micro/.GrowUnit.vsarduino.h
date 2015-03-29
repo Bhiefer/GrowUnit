@@ -30,6 +30,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <AndCondition.h>
 #include <Condition.cpp>
 #include <Condition.h>
+#include <Configuration.cpp>
 #include <Configuration.h>
 #include <Constants.h>
 #include <DHT.cpp>

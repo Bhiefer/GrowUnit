@@ -47,6 +47,10 @@ void setup()
 	counter = 0;
 	uint8_t i = 0;
 	
+	// SET CLOCK
+// 	DS3231RTC t;
+// 	t.set(1427620515);
+	
 	for(i = 0; i < outputsSize; i++)
 	{
 		outputs[i]->onCreate();
@@ -57,9 +61,9 @@ void setup()
 		sensors[i]->onCreate();
 	}
 	
-	for(i = 0; i < preconditionsSize; i++)
+	for(i = 0; i < preconditionMappingSize; i++)
 	{
-		preconditions[i].sensor->setPrecondition(preconditions[i].precondition);
+		preconditionMapping[i].sensor->setPrecondition(preconditionMapping[i].precondition);
 	}
 	
 	for(i = 0; i < mappingSize; i++)
@@ -70,10 +74,7 @@ void setup()
 }
 
 void loop()
-{
-	
-	Data data;
-	
+{	
 	Serial.print("Loop ");
 	Serial.println(counter++);
 
@@ -87,5 +88,9 @@ void loop()
 		outputs[i]->onMeasured();
 	}
 	
+	Data data;
+	data.store();
+	
+	Serial.println("----------------------------------------");
 	delay(1000);
 }

@@ -594,6 +594,9 @@ config.path={runtime.ide.path}/hardware/tools/avr/etc/avrdude.conf
     <Compile Include="Condition.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Configuration.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Constants.h">
       <SubType>compile</SubType>
     </Compile>

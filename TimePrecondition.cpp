@@ -7,9 +7,10 @@
 
 #include "TimePrecondition.h"
 #include "Timer.h"
+#include <Json>
 
 // default constructor
-TimePrecondition::TimePrecondition(uint16_t period)
+TimePrecondition::TimePrecondition(time_t period)
 {
 	mPeriod = period;
 } //TimePrecondition
@@ -19,6 +20,7 @@ bool TimePrecondition::check()
 	if(timer.checkElapsed(mLastTime, mPeriod))
 	{
 		mLastTime = timer.current();
+	
 		return true;
 	}		
 	else
@@ -30,4 +32,15 @@ bool TimePrecondition::check()
 char * TimePrecondition::toString()
 {
 	return "TimePrecondition";
+}
+
+void TimePrecondition::store( JsonObject& json )
+{
+	JsonObject& time = json.createNestedObject("timePrecondition");
+	time["last"] = (long)mLastTime;	
+}
+
+void TimePrecondition::restore( JsonObject& json )
+{
+	
 }

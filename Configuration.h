@@ -22,19 +22,19 @@
 #include "LessThanCondition.h"
 
 
-// LightSensor lightSensor(0);
-//SoilSensor soilSensor(0);
-// DigitalSensor digiSensor(6);
-DhtHumSensor dhtSensor(12);
+//extern  LightSensor lightSensor;
+//extern SoilSensor soilSensor;
+//extern DigitalSensor digiSensor;
+extern DhtHumSensor dhtSensor;
 
-AlwaysCondition always;
-LessThanCondition lessThan(800);
+extern AlwaysCondition always;
+extern LessThanCondition lessThan;
 
-TimePrecondition timePrecondition(5);
+extern TimePrecondition timePrecondition;
 
-RelayOutput relayOutput(13, 3);
-SerialOutput serialOutput;
-//Pcd8544Output pcd8544Output(12,11,10,9,8);
+extern RelayOutput relayOutput;
+extern SerialOutput serialOutput;
+//extern Pcd8544Output pcd8544Output;
 
 static Sensor* sensors[] = {
 	&dhtSensor,
@@ -51,10 +51,15 @@ static Output* outputs[] = {
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
-static SensorPrecondition preconditions[] = {
+static Precondition* preconditions[] = {
+	&timePrecondition
+};
+static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(Precondition*);
+
+static SensorPrecondition preconditionMapping[] = {
 	{&timePrecondition, &dhtSensor}
 };
-static uint8_t preconditionsSize = sizeof(preconditions)/sizeof(SensorPrecondition);
+static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(SensorPrecondition);
 
 static Mapping mapping[] = {
 	{&dhtSensor, &lessThan, &relayOutput},

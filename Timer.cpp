@@ -14,24 +14,20 @@ Timer timer;
 Timer::Timer()
 {
 	// SET CLOCK
-	//	mRtc.set(1424617980);
+	 
 } //Timer
 
-// default destructor
-Timer::~Timer()
-{
-} //~Timer
-
-uint16_t Timer::current()
+time_t Timer::current()
 {
 	return mRtc.get();
 }
 
-bool Timer::checkElapsed( uint16_t last, uint16_t period )
+bool Timer::checkElapsed( time_t last, time_t period )
 {
 //	uint16_t elapsed = current() - last;
-//	Serial.println(elapsed);
-//	return elapsed > period;
+// 	uint16_t elapsed = mRtc.get() - last;
+// 	Serial.println(elapsed);
+// 	return elapsed > period;
 	
 	return current() - last > period;	
 }

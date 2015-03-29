@@ -7,26 +7,35 @@
 
 
 #include "Data.h"
+#include "Configuration.h"
 
 // default constructor
 Data::Data()
-{
-  JsonObject& root = mBuffer.createObject();
-	
+{	
 } //Data
 
 
-JsonObject& Data::getPreconditionObject()
+JsonObject& Data::getPreconditionObject(JsonObject& root)
 {
-	
+	JsonObject& obj = root.createNestedObject("preconditions");
+	for(int i = 0; i < preconditionsSize; i++)
+	{
+		preconditions[i]->store(obj);
+	}
 }
 
-JsonObject& Data::getOutputObject()
+JsonObject& Data::getOutputObject(JsonObject& root)
 {
 	
 }
 
 void Data::store()
 {
+	JsonObject& root = mBuffer.createObject();
 	
+	getPreconditionObject(root);
+	getOutputObject(root);
+	
+	root.prettyPrintTo(Serial);
+	Serial.println();
 }

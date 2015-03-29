@@ -10,6 +10,7 @@
 #define __TIMEPRECONDITION_H__
 
 #include "Precondition.h"
+#include <DS3231RTC.h>
 
 class TimePrecondition : public Precondition
 {
@@ -17,16 +18,20 @@ class TimePrecondition : public Precondition
 public:
 protected:
 private:
-  uint16_t mPeriod;
-  uint16_t mLastTime;
+  time_t mPeriod;
+  time_t mLastTime;
 
 //functions
 public:
-	TimePrecondition(uint16_t period);
+	TimePrecondition(time_t period);
 	
 	virtual bool check();
 	
 	virtual char * toString();
+	
+	virtual void store(JsonObject& json);
+	virtual void restore(JsonObject& json);
+	
 protected:
 private:
 
