@@ -15,7 +15,7 @@ class AlwaysCondition : public Condition
 {
 	//functions
 	public:
-	AlwaysCondition() {};
+	AlwaysCondition(uint8_t id): Condition(id) {};
 	bool check(int16_t value);
 
 }; //AlwaysCondition

@@ -21,7 +21,6 @@ private:
 //functions
 public:
 	MedianatorFive();
-	~MedianatorFive();
 protected:
 private:
 

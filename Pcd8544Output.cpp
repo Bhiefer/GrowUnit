@@ -8,7 +8,7 @@
 
 #include "Pcd8544Output.h"
 
-Pcd8544Output::Pcd8544Output( int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk ) : Adafruit_PCD8544(clk, din, dc, ce, rst)
+Pcd8544Output::Pcd8544Output( uint8_t id, int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk ) : Output(id), Adafruit_PCD8544(clk, din, dc, ce, rst)
 {
 	mLight = 0;
 	mSwitch = 0;

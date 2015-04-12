@@ -17,8 +17,3 @@ bool Precondition::check()
 {
 	return true;
 }
-
- Precondition::Precondition()
-{
-	
-}

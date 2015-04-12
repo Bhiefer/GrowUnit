@@ -21,7 +21,7 @@ private:
 
 //functions
 public:
-	LessThanCondition(int16_t treshold)
+	LessThanCondition(uint8_t id, int16_t treshold): Condition(id)
 	{
 		mTreshold = treshold;
 	}

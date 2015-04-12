@@ -24,7 +24,7 @@ private:
 
 //functions
 public:
-	DhtSensor(uint8_t pin) : Sensor(pin)
+	DhtSensor(uint8_t id, uint8_t pin) : Sensor(id, pin)
 	{
 		log = false;
 	}

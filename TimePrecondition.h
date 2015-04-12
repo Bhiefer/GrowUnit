@@ -23,7 +23,7 @@ private:
 
 //functions
 public:
-	TimePrecondition(time_t period);
+	TimePrecondition(uint8_t id, time_t period);
 	
 	virtual bool check();
 	

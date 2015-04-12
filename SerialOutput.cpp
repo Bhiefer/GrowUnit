@@ -10,7 +10,7 @@
 #define SERIAL_SPEED 9600
 
 // default constructor
-SerialOutput::SerialOutput()
+SerialOutput::SerialOutput(uint8_t id): Output(id)
 {
 } //SerialOutput
 

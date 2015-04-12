@@ -25,7 +25,7 @@ class Sensor : public ISensor, public Object
 		Precondition * mPrecondition;
 		
 		uint8_t mPin;
-		uint8_t mIdentifier;
+		
 		
 		int16_t mMeasuredValue;
 	
@@ -38,8 +38,8 @@ class Sensor : public ISensor, public Object
 		virtual int16_t measureValue() = 0;
 	
 	public:
-		Sensor(uint8_t pin)
-		{
+		Sensor(uint8_t id, uint8_t pin) : Object(id)
+		{			
 			mPin = pin;
 			mRulesCnt = 0;
 		}
@@ -52,7 +52,7 @@ class Sensor : public ISensor, public Object
 		
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();
-		virtual uint8_t getIdentifier();
+		
 		
 		virtual void store(JsonObject& json);
 		virtual void restore(JsonObject& json);

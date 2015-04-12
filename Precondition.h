@@ -16,7 +16,10 @@ class Precondition : public IPrecondition, public Object
 {
 	//functions
 	public:
-	Precondition();
+	Precondition(uint8_t id): Object(id)
+	{
+		
+	}
 	
 	virtual bool check();
 	

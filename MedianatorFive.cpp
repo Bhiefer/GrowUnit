@@ -13,7 +13,4 @@ MedianatorFive::MedianatorFive()
 {
 } //MedianatorFive
 
-// default destructor
-MedianatorFive::~MedianatorFive()
-{
-} //~MedianatorFive
+

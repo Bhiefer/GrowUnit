@@ -10,7 +10,7 @@
 #include <Json>
 
 // default constructor
-TimePrecondition::TimePrecondition(time_t period)
+TimePrecondition::TimePrecondition(uint8_t id, time_t period): Precondition(id)
 {
 	mPeriod = period;
 } //TimePrecondition

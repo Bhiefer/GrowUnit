@@ -23,7 +23,7 @@ private:
 
 //functions
 public:	
-	EthernetOutput()
+	EthernetOutput(uint8_t id): Output(id)
 	{
 		mMeasurementsCnt = 0;
 	}

@@ -20,7 +20,7 @@ private:
 
 //functions
 public:
-	SerialOutput();
+	SerialOutput(uint8_t id);
 	
 	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
 	

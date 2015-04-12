@@ -22,7 +22,11 @@ private:
 
 //functions
 public:
-	AndCondition(Condition * first, Condition * second);
+	AndCondition(uint8_t id, Condition * first, Condition * second): Condition(id)
+	{
+		mFirst = first;
+		mSecond = second;
+	}
 	
 	virtual bool check(int16_t value);
 protected:

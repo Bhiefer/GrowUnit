@@ -17,7 +17,10 @@ class Condition : public ICondition, public Object
 	uint8_t mByte;
 	//functions
 	public:
-	Condition() { mByte = 0;}
+	Condition(uint8_t id): Object(id) 
+	{ 
+		mByte = 0;
+	}
 	
 	virtual bool check(int16_t value);
 	

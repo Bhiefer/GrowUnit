@@ -10,10 +10,9 @@
 #define __TIMER_H__
 
 #include <DS3231RTC.h>
-#include "Object.h"
 
 
-class Timer : public Object
+class Timer
 {
 //variables
 public:

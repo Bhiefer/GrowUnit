@@ -20,7 +20,7 @@ private:
 int16_t mSwitch;
 //functions
 public:
-	Pcd8544Output(int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk);
+	Pcd8544Output(uint8_t id, int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk);
 	
 	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
 	virtual uint8_t onCreate();

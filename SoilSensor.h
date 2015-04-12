@@ -25,7 +25,7 @@ private:
 
 //functions
 public:
-	SoilSensor(uint8_t pin) : AnalogSensor(pin)
+	SoilSensor(uint8_t id, uint8_t pin) : AnalogSensor(id, pin)
 	{
 		
 	}

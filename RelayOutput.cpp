@@ -9,7 +9,7 @@
 #include "RelayOutput.h"
 #include "Timer.h"
 
- RelayOutput::RelayOutput( uint8_t pin, uint16_t onTime )
+ RelayOutput::RelayOutput(uint8_t id, uint8_t pin, uint16_t onTime ) : Output(id)
  {
 	mPin = pin;
 	mOnTime = onTime;

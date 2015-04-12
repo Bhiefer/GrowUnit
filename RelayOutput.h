@@ -25,7 +25,7 @@ private:
 
 //functions
 public:
-	RelayOutput(uint8_t pin, uint16_t onTime);
+	RelayOutput(uint8_t id, uint8_t pin, uint16_t onTime);
 	
 	virtual uint8_t onCreate();
 	virtual uint8_t onReceive(int16_t value, Sensor * sensor);

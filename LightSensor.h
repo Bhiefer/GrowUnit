@@ -20,7 +20,7 @@ private:
 
 //functions
 public:
-	LightSensor(uint8_t pin) : AnalogSensor(pin)
+	LightSensor(uint8_t id, uint8_t pin) : AnalogSensor(id, pin)
 	{
 		
 	}
