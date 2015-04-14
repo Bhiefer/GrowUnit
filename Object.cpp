@@ -22,7 +22,7 @@ bool Object::needStoring()
 
 void Object::store( JsonObject& json )
 {
-	
+	json["id"] = getId();
 }
 
 void Object::restore( JsonObject& json )

@@ -20,7 +20,7 @@ class Data
 public:
 protected:
 private:
-	StaticJsonBuffer<200> mBuffer;
+	StaticJsonBuffer<150> mBuffer;
 
 //functions
 public:

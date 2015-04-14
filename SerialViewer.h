@@ -9,9 +9,9 @@
 #ifndef __SERIALOUTPUT_H__
 #define __SERIALOUTPUT_H__
 
-#include "Output.h"
+#include "Viewer.h"
 
-class SerialOutput : public Output
+class SerialViewer : public Viewer
 {
 //variables
 public:
@@ -20,11 +20,10 @@ private:
 
 //functions
 public:
-	SerialOutput(uint8_t id);
-	
-	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
+	SerialViewer(uint8_t id);
 	
 	virtual uint8_t onCreate();
+	virtual uint8_t onMeasured();
 	
 	virtual void store(JsonObject& json);
 protected:

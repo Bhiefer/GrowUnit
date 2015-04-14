@@ -23,6 +23,7 @@ uint8_t Pcd8544Output::onCreate()
 uint8_t Pcd8544Output::onReceive( int16_t value, Sensor * sensor )
 {
 	uint8_t pin = sensor->getPin();
+	
 	if(pin == 0)
 	{
 		mLight = value;
@@ -36,6 +37,12 @@ uint8_t Pcd8544Output::onReceive( int16_t value, Sensor * sensor )
 uint8_t Pcd8544Output::onMeasured()
 {
 	clearDisplay();
+	
+// 	uint8_t i = 0;
+// 	for(i = 0; i< sensorsSize; i++)
+// 	{
+// 		sensors[i].
+// 	}
 	
 	fillRect(0, 0, width(), 16, BLACK);
 	

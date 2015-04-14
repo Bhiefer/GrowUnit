@@ -36,6 +36,8 @@ char * TimePrecondition::toString()
 
 void TimePrecondition::store( JsonObject& json )
 {
+	Precondition::store(json);
+	
 	json["type"] = "time";
 	json["last"] = static_cast<long>(mLastTime);
 	json["period"] = static_cast<long>(mPeriod);	

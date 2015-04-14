@@ -30,7 +30,8 @@ public:
 		
 	}
 
-virtual int16_t measureValue();
+	virtual int16_t measureValue();
+	virtual void store(JsonObject& json);
 
 protected:
 private:

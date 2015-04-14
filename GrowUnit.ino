@@ -24,7 +24,6 @@ by David A. Mellis
 #include <JsonGenerator.h>
 #include "Configuration.h"
 #include "Timer.h"
-#include "Data.h"
 
 
 static int16_t counter;
@@ -50,6 +49,11 @@ void setup()
 	// SET CLOCK
 // 	DS3231RTC t;
 // 	t.set(1427620515);
+
+	for(i = 0; i < viewersSize; i++)
+	{
+		viewers[i]->onCreate();
+	}
 	
 	for(i = 0; i < outputsSize; i++)
 	{
@@ -70,7 +74,6 @@ void setup()
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);
 	}
-	
 }
 
 void loop()
@@ -88,9 +91,11 @@ void loop()
 		outputs[i]->onMeasured();
 	}
 	
-	Data data;
-	data.store();
+	for(uint8_t i = 0; i < viewersSize; i++)
+	{
+		viewers[i]->onMeasured();
+	}
 	
 	Serial.println("----------------------------------------");
-	delay(1000);
+	delay(10000);
 }

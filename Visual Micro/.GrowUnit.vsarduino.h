@@ -5,11 +5,10 @@
 	        all non-arduino files created by visual micro and all visual studio project or solution files can be freely deleted and are not required to compile a sketch (do not delete your own code!).
 	        note: debugger breakpoints are stored in '.sln' or '.asln' files, knowledge of last uploaded breakpoints is stored in the upload.vmps.xml file. Both files are required to continue a previous debug session without needing to compile and upload again
 	
-	Hardware: Arduino Uno, Platform=avr, Package=arduino
+	Hardware: Arduino Mega w/ ATmega2560 (Mega 2560), Platform=avr, Package=arduino
 */
 
-#define __AVR_ATmega328p__
-#define __AVR_ATmega328P__
+#define __AVR_ATmega2560__
 #define ARDUINO 155
 #define ARDUINO_MAIN
 #define F_CPU 16000000L
@@ -19,7 +18,7 @@ extern "C" void __cxa_pure_virtual() {;}
 //
 //
 
-#include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\standard\pins_arduino.h" 
+#include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\mega\pins_arduino.h" 
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino\arduino.h"
 #include <GrowUnit.ino>
 #include <AlwaysCondition.cpp>
@@ -53,6 +52,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <IPrecondition.h>
 #include <ISensor.h>
 #include <IValueProcessor.h>
+#include <IViewer.h>
 #include <LessThanCondition.cpp>
 #include <LessThanCondition.h>
 #include <LightSensor.cpp>
@@ -67,14 +67,16 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <Output.h>
 #include <Pcd8544Output.cpp>
 #include <Pcd8544Output.h>
+#include <PlotlyViewer.cpp>
+#include <PlotlyViewer.h>
 #include <Precondition.cpp>
 #include <Precondition.h>
 #include <RelayOutput.cpp>
 #include <RelayOutput.h>
 #include <Sensor.cpp>
 #include <Sensor.h>
-#include <SerialOutput.cpp>
-#include <SerialOutput.h>
+#include <SerialViewer.cpp>
+#include <SerialViewer.h>
 #include <SoilSensor.cpp>
 #include <SoilSensor.h>
 #include <Structs.h>
@@ -84,3 +86,7 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <Timer.h>
 #include <ValueProcessor.cpp>
 #include <ValueProcessor.h>
+#include <Viewer.cpp>
+#include <Viewer.h>
+#include <plotly_streaming_ethernet.cpp>
+#include <plotly_streaming_ethernet.h>

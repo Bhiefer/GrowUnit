@@ -80,7 +80,7 @@ uint8_t Sensor::setPrecondition( Precondition * precondition )
 
 void Sensor::store( JsonObject& json )
 {
-	json["id"] = getId();
+	Object::store(json);
 	json["pin"] = mPin;
 	json["value"] = mMeasuredValue;
 	
