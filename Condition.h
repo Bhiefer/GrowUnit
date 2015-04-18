@@ -12,7 +12,7 @@
 #include "ICondition.h"
 #include "Object.h"
 
-class Condition : public ICondition, public Object
+class Condition : public Object
 {
 	uint8_t mByte;
 	//functions

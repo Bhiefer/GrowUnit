@@ -59,6 +59,7 @@ uint8_t RelayOutput::onMeasured()
 
 uint8_t RelayOutput::onCreate()
 {
+	//digitalWrite(mPin, LOW);
 	pinMode(mPin, OUTPUT);
 }
 
@@ -67,6 +68,11 @@ void RelayOutput::store( JsonObject& json )
 	json["type"] = "relay";
 	json["pin"] = mPin;
 	json["state"] = mIsTurnedOn ? "on" : "off";
+}
+
+int16_t RelayOutput::getStateValue()
+{
+	return mIsTurnedOn ? 1024 : 0;
 }
 
 

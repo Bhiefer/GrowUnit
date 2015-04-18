@@ -10,9 +10,8 @@
 #define __VALUEPROCESSOR_H__
 
 #include "Object.h"
-#include "IValueProcessor.h"
 
-class ValueProcessor : public IValueProcessor, public Object
+class ValueProcessor : public Object
 {
 //functions
 public:

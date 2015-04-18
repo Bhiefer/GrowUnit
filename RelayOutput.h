@@ -30,6 +30,7 @@ public:
 	virtual uint8_t onCreate();
 	virtual uint8_t onReceive(int16_t value, Sensor * sensor);
 	virtual uint8_t onMeasured();
+	virtual int16_t getStateValue();
 	
 	virtual void store(JsonObject& json);
 protected:

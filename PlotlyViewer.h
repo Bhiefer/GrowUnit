@@ -11,6 +11,7 @@
 
 #include "Viewer.h"
 #include "plotly_streaming_ethernet.h"
+#include "Time.h"
 
 class PlotlyViewer : public Viewer, public plotly
 {
@@ -18,6 +19,7 @@ class PlotlyViewer : public Viewer, public plotly
 	public:
 	protected:
 	private:
+	time_t mLastTimeSent;
 
 	//functions
 	public:

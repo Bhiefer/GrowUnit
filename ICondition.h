@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __ICONDITION_H__
+/*#ifndef __ICONDITION_H__
 #define __ICONDITION_H__
 
 #include "Arduino.h"
@@ -19,4 +19,4 @@ public:
 
 };
 
-#endif //__ICONDITION_H__
+#endif //__ICONDITION_H__*/

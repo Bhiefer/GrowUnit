@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __IPRECONDITION_H__
+/*#ifndef __IPRECONDITION_H__
 #define __IPRECONDITION_H__
 
 
@@ -18,4 +18,4 @@ class IPrecondition
 
 };
 
-#endif //__IPRECONDITION_H__
+#endif //__IPRECONDITION_H__*/

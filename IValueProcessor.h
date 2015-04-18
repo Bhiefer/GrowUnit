@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __IVALUEPROCESSOR_H__
+/*#ifndef __IVALUEPROCESSOR_H__
 #define __IVALUEPROCESSOR_H__
 
 
@@ -19,4 +19,4 @@ public:
 
 }; //IValueProcessor
 
-#endif //__IVALUEPROCESSOR_H__
+#endif //__IVALUEPROCESSOR_H__*/

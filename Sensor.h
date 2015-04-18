@@ -9,14 +9,13 @@
 #ifndef __SENSOR_H__
 #define __SENSOR_H__
 
-#include "ISensor.h"
 #include "Object.h"
 #include "Constants.h"
 #include "Condition.h"
 #include "Precondition.h"
 #include "Structs.h"
 
-class Sensor : public ISensor, public Object
+class Sensor :  public Object
 {
 	protected:
 		Rule mRules[MAX_RULES_COUNT];
@@ -47,8 +46,15 @@ class Sensor : public ISensor, public Object
 		virtual uint8_t addRule(Condition * condition, Output * output);
 		virtual uint8_t addRule(Rule rule);
 		virtual uint8_t setPrecondition(Precondition * precondition);
+		int16_t getMeasuredValue()
+		{
+			return mMeasuredValue;
+		}
 		
-		virtual uint8_t getPin();
+		uint8_t getPin()
+		{
+			return mPin;
+		}
 		
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();

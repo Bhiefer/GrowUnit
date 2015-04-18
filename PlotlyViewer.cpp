@@ -8,7 +8,8 @@
 
 #include "Constants.h"
 #include "PlotlyViewer.h"
-
+#include "Configuration.h"
+#include "Timer.h"
 
 // Sign up to plotly here: https://plot.ly
 // View your API key and streamtokens here: https://plot.ly/settings
@@ -25,12 +26,13 @@
 uint8_t PlotlyViewer::onCreate()
 {
 	Serial.println("... Initializing ethernet");
-	if(Ethernet.begin(DEVICE_MAC) == 0){
-		Serial.println("... Failed to configure Ethernet using DHCP");
-		// no point in carrying on, so do nothing forevermore:
-		// try to congifure using IP address instead of DHCP:
-		Ethernet.begin(DEVICE_MAC, DEVICE_IP);
-	}
+	Ethernet.begin(DEVICE_MAC, DEVICE_IP);
+// 	if(Ethernet.begin(DEVICE_MAC) == 0){
+// 		Serial.println("... Failed to configure Ethernet using DHCP");
+// 		// no point in carrying on, so do nothing forevermore:
+// 		// try to congifure using IP address instead of DHCP:
+// 		Ethernet.begin(DEVICE_MAC, DEVICE_IP);
+// 	}
 	Serial.println("... Done initializing ethernet");
 	delay(1000);
 
@@ -39,11 +41,28 @@ uint8_t PlotlyViewer::onCreate()
 	success = init();
 	if(!success){while(true){}}
 	openStream();
+	
+	mLastTimeSent = timer.current();
 }
 
 uint8_t PlotlyViewer::onMeasured()
 {
-	plot(millis(), analogRead(A0), PLOTLY_TOKENS[0]);
+	if(timer.checkElapsed(mLastTimeSent, PLOTLY_INTERVAL))
+	{
+		mLastTimeSent = timer.current();
+		
+		int i = 0;
+		int token = 0;
+		for(i = 0; i < sensorsSize && token < PLOTLY_TOKENS_SIZE; i++)
+		{
+			plot(millis(), sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
+		}
+		
+		for(i = 0; i < outputsSize && token < PLOTLY_TOKENS_SIZE; i++)
+		{
+			plot(millis(), outputs[i]->getStateValue(), PLOTLY_TOKENS[token++]);
+		}
+	}
 }
 
 

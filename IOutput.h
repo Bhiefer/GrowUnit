@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __IOUTPUT_H__
+/*#ifndef __IOUTPUT_H__
 #define __IOUTPUT_H__
 
 #include "Arduino.h"
@@ -23,4 +23,4 @@ class IOutput
 	virtual uint8_t onMeasured() = 0;
 };
 
-#endif //__IOUTPUT_H__
+#endif //__IOUTPUT_H__*/

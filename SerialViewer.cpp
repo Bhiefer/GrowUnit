@@ -32,6 +32,6 @@ void SerialViewer::store( JsonObject& json )
 uint8_t SerialViewer::onMeasured()
 {
 	// temporarily
-// 	Data data;
-// 	data.store();
+ 	Data data;
+ 	data.store();
 }

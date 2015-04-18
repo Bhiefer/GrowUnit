@@ -47,7 +47,7 @@ static Sensor* sensors[] = {
 static uint8_t sensorsSize = sizeof(sensors)/sizeof(Sensor*);
 
 static Output* outputs[] = {
-//	&relayOutput
+	&relayOutput
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
@@ -66,7 +66,7 @@ static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(Sens
 static Mapping mapping[] = {
 //	{&dhtSensor, &lessThan, &relayOutput},
 //	{&soilSensor, &always, &pcd8544Output},
-	{&soilSensor, &lessThan, &relayOutput}
+	{&soilSensor, &always, &relayOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

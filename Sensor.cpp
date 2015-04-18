@@ -68,11 +68,6 @@ uint8_t Sensor::onCreate()
 {
 }
 
-uint8_t Sensor::getPin()
-{
-	return mPin;	
-}
-
 uint8_t Sensor::setPrecondition( Precondition * precondition )
 {
 	mPrecondition = precondition;

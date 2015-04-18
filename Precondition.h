@@ -9,10 +9,9 @@
 #ifndef __PRECONDITION_H__
 #define __PRECONDITION_H__
 
-#include "IPrecondition.h"
 #include "Object.h"
 
-class Precondition : public IPrecondition, public Object
+class Precondition : public Object
 {
 	//functions
 	public:

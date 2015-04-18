@@ -27,14 +27,14 @@
 TimePrecondition timePrecondition(SHORT_TIME_PRECONDITION, 5);
 
 // LightSensor lightSensor(0);
-SoilSensor soilSensor(SOIL_SENSOR,0);
+SoilSensor soilSensor(SOIL_SENSOR, 0);
 // DigitalSensor digiSensor(6);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
 AlwaysCondition always(ALWAYS_CONDITION);
 LessThanCondition lessThan(LESS_THAN_800_CONDITION,800);
 
-RelayOutput relayOutput(RELAY_OUTPUT, 10, 3);
+RelayOutput relayOutput(RELAY_OUTPUT, 7, 3);
 
 SerialViewer serialViewer(SERIAL_VIEWER);
 PlotlyViewer plotlyViewer(PLOTLY_VIEWER);

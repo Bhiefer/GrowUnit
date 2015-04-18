@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __ISENSOR_H__
+/*#ifndef __ISENSOR_H__
 #define __ISENSOR_H__
 
 #include "Arduino.h"
@@ -24,4 +24,4 @@ class ISensor
 
 }; //ISensor
 
-#endif //__ISENSOR_H__
+#endif //__ISENSOR_H__*/
