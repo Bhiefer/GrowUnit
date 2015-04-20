@@ -9,12 +9,6 @@
 #include "Object.h"
 #include <SPI.h>
 
-// functions
-void Object::writeDebug()
-{
-	Serial.println(toString());
-}
-
 bool Object::needStoring()
 {
 	return false;

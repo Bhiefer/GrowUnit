@@ -31,6 +31,14 @@ static const uint8_t SERVER_IP[] = { 192, 168, 1, 102};
 static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
 #define PLOTLY_INTERVAL 15
 
+// LCD
+#define LCD_INTERVAL 5
+#define LCD_LINE_1_LENGTH 25
+
+// Serial
+#define SERIAL_INTERVAL 5
+#define SERIAL_SPEED 9600
+
 // Sensors
 #define MAX_RULES_COUNT 3
 #define MAX_MEASUREMENTS_COUNT 10

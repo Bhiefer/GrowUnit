@@ -6,7 +6,7 @@
 */
 
 
-#ifndef __IOBJECT_H__
+/*#ifndef __IOBJECT_H__
 #define __IOBJECT_H__
 
 #include <ArduinoJson.h>
@@ -21,11 +21,11 @@ class IObject
 public:
 	virtual ~IObject(){}
 	virtual void writeDebug() = 0;
-	virtual char * toString() = 0;
+	virtual void toString(char* string, uint8_t maxLength) = 0;
 	virtual bool needStoring() = 0;
 	virtual void store(JsonObject& json) = 0;
 	virtual void restore(JsonObject& json) = 0;
 
 }; //Object
 
-#endif //__IOBJECT_H__
+#endif //__IOBJECT_H__*/

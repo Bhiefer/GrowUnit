@@ -65,8 +65,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <Object.h>
 #include <Output.cpp>
 #include <Output.h>
-#include <Pcd8544Output.cpp>
-#include <Pcd8544Output.h>
+#include <Pcd8544Viewer.cpp>
+#include <Pcd8544Viewer.h>
 #include <PlotlyViewer.cpp>
 #include <PlotlyViewer.h>
 #include <Precondition.cpp>

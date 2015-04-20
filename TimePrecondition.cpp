@@ -29,11 +29,6 @@ bool TimePrecondition::check()
 	}
 }
 
-char * TimePrecondition::toString()
-{
-	return "TimePrecondition";
-}
-
 void TimePrecondition::store( JsonObject& json )
 {
 	Precondition::store(json);

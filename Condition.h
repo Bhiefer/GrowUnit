@@ -24,7 +24,7 @@ class Condition : public Object
 	
 	virtual bool check(int16_t value);
 	
-	virtual char * toString();
+	virtual void toString(char* string, uint8_t maxLength);
 }; //Condition
 
 #endif //__CONDITION_H__

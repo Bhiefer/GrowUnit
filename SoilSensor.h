@@ -32,6 +32,8 @@ public:
 
 	virtual int16_t measureValue();
 	virtual void store(JsonObject& json);
+	
+	virtual void toString(char* string, uint8_t maxLength);
 
 protected:
 private:

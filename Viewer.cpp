@@ -18,7 +18,7 @@ uint8_t Viewer::onMeasured()
 	
 }
 
-char * Viewer::toString()
+void Viewer::toString(char* string, uint8_t maxLength)
 {
-	
+	memcpy(string, "Viewer", 6);
 }

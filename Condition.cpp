@@ -14,7 +14,7 @@ bool Condition::check(int16_t value)
 	return true;
 }
 
-char * Condition::toString()
+void Condition::toString(char* string, uint8_t maxLength)
 {
-	return "Condition";	
+	memcpy(string, "Condition", 9);	
 }

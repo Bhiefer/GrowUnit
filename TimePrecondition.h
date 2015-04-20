@@ -27,8 +27,6 @@ public:
 	
 	virtual bool check();
 	
-	virtual char * toString();
-	
 	virtual void store(JsonObject& json);
 	virtual void restore(JsonObject& json);
 	

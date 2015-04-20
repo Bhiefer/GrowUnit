@@ -32,8 +32,7 @@ class Sensor :  public Object
 	private:
 		bool isRulesFull();
 	
-		protected:
-		virtual char * toString();
+	protected:	
 		virtual int16_t measureValue() = 0;
 	
 	public:
@@ -45,6 +44,16 @@ class Sensor :  public Object
 
 		virtual uint8_t addRule(Condition * condition, Output * output);
 		virtual uint8_t addRule(Rule rule);
+		Rule* getRules()
+		{
+			return mRules;	
+		}
+		
+		uint8_t getRulesCnt()
+		{
+			return mRulesCnt;
+		}
+		
 		virtual uint8_t setPrecondition(Precondition * precondition);
 		int16_t getMeasuredValue()
 		{
@@ -62,6 +71,8 @@ class Sensor :  public Object
 		
 		virtual void store(JsonObject& json);
 		virtual void restore(JsonObject& json);
+		
+		virtual void toString(char* string, uint8_t maxLength);
 };
 
 #endif //__SENSOR_H__

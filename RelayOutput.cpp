@@ -32,6 +32,10 @@ uint8_t RelayOutput::onMeasured()
 //	Serial.println("on measured");
 	if(mIsTurnedOn)
 	{
+// 		Serial.print("Last:");
+// 		Serial.println(mLastOnTime);
+// 		Serial.print("Current:");
+// 		Serial.println(timer.current());
 		if(timer.checkElapsed(mLastOnTime, mOnTime))
 		{
 			Serial.println("Turn off");
@@ -73,6 +77,12 @@ void RelayOutput::store( JsonObject& json )
 int16_t RelayOutput::getStateValue()
 {
 	return mIsTurnedOn ? 1024 : 0;
+}
+
+void RelayOutput::toString( char* string, uint8_t maxLength )
+{
+	String str = new String("Relay:") + mIsTurnedOn ?"ON":"OFF";
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
 }
 
 

@@ -23,8 +23,9 @@
 // VIEWERS
 #define SERIAL_VIEWER 0
 #define PLOTLY_VIEWER 1
+#define LCD_VIEWER 2
 
-TimePrecondition timePrecondition(SHORT_TIME_PRECONDITION, 5);
+TimePrecondition timePrecondition(SHORT_TIME_PRECONDITION, 60);
 
 // LightSensor lightSensor(0);
 SoilSensor soilSensor(SOIL_SENSOR, 0);
@@ -32,10 +33,11 @@ SoilSensor soilSensor(SOIL_SENSOR, 0);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
 AlwaysCondition always(ALWAYS_CONDITION);
-LessThanCondition lessThan(LESS_THAN_800_CONDITION,800);
+LessThanCondition lessThan(LESS_THAN_800_CONDITION,20);
 
-RelayOutput relayOutput(RELAY_OUTPUT, 7, 3);
+// nejak 20 sekund na napusteni
+RelayOutput relayOutput(RELAY_OUTPUT, 7, 20);
 
 SerialViewer serialViewer(SERIAL_VIEWER);
 PlotlyViewer plotlyViewer(PLOTLY_VIEWER);
-//Pcd8544Output pcd8544Viewer(12,11,10,9,8);
+Pcd8544Viewer pcd8544Viewer(LCD_VIEWER, 2,3,4,5,6);

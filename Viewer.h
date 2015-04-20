@@ -25,7 +25,7 @@ class Viewer: public IViewer, public Object
 	virtual uint8_t onCreate();
 	virtual uint8_t onMeasured();
 	
-	virtual char * toString();
+	virtual void toString(char* string, uint8_t maxLength);
 
 }; //Viewer
 

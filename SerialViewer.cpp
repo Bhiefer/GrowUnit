@@ -7,8 +7,8 @@
 
 #include "SerialViewer.h"
 #include "Data.h"
-
-#define SERIAL_SPEED 9600
+#include "Constants.h"
+#include "Timer.h"
 
 // default constructor
 SerialViewer::SerialViewer(uint8_t id): Viewer(id)
@@ -19,6 +19,8 @@ uint8_t SerialViewer::onCreate()
 {
 	// Open serial communications and wait for port to open:
 	Serial.begin(SERIAL_SPEED);	
+	
+	mLastTimeSent = timer.current();
 }
 
 
@@ -31,7 +33,11 @@ void SerialViewer::store( JsonObject& json )
 
 uint8_t SerialViewer::onMeasured()
 {
-	// temporarily
- 	Data data;
- 	data.store();
+	if(timer.checkElapsed(mLastTimeSent, SERIAL_INTERVAL))
+	{
+		mLastTimeSent = timer.current();
+		// temporarily
+ 		Data data;
+ 		data.store();
+	}
 }

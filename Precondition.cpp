@@ -8,9 +8,9 @@
 
 #include "Precondition.h"
 
-char * Precondition::toString()
+void Precondition::toString(char* string, uint8_t maxLength)
 {
-	return "Precondition";
+	memcpy(string, "Precondition", 12);
 }
 
 bool Precondition::check()

@@ -59,9 +59,13 @@ bool Sensor::isRulesFull()
 	return mRulesCnt >= MAX_RULES_COUNT;
 }
 
-char * Sensor::toString()
+void Sensor::toString( char* string, uint8_t maxLength )
 {
-	return "Abstract sensor";
+	String str = String("Sensor\nPin:");
+	str += mPin;
+	str += ", value:";
+	str += mMeasuredValue;
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
 }
 
 uint8_t Sensor::onCreate()

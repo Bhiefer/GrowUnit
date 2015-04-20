@@ -23,8 +23,8 @@ uint8_t Output::onMeasured()
 	
 }
 
-char * Output::toString()
+void Output::toString(char* string, uint8_t maxLength)
 {
-	return "Output";
+	memcpy(string, "Output", 6);
 }
 

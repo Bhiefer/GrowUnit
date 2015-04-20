@@ -9,9 +9,10 @@
 #ifndef __OBJECT_H__
 #define __OBJECT_H__
 
-#include "IObject.h"
+#include <ArduinoJson.h>
+#include "Arduino.h"
 
-class Object : public IObject
+class Object 
 {
 	uint8_t mId;
 	
@@ -22,8 +23,8 @@ class Object : public IObject
 		mId = id;
 	}
 	
-	virtual char * toString()=0;
-	virtual void writeDebug();
+	virtual void toString(char* string, uint8_t maxLength)=0;
+//	virtual void writeDebug();
 	virtual bool needStoring();
 	virtual void store(JsonObject& json);
 	virtual void restore(JsonObject& json);

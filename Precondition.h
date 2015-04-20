@@ -22,7 +22,7 @@ class Precondition : public Object
 	
 	virtual bool check();
 	
-	virtual char * toString();
+	virtual void toString(char* string, uint8_t maxLength);
 }; //Precondition
 
 #endif //__PRECONDITION_H__

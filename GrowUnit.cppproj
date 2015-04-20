@@ -674,10 +674,10 @@ build.arch=AVR
     <Compile Include="MedianatorFive.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Pcd8544Output.cpp">
+    <Compile Include="Pcd8544Viewer.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Pcd8544Output.h">
+    <Compile Include="Pcd8544Viewer.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="PlotlyViewer.cpp">

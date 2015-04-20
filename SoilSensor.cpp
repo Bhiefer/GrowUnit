@@ -11,7 +11,7 @@
 int16_t SoilSensor::measureValue()
 {
 	int16_t i = 1024 - AnalogSensor::measureValue();
-	Serial.println(i);
+	//Serial.println(i);
 	return i;
 }
 
@@ -20,4 +20,11 @@ void SoilSensor::store( JsonObject& json )
 	json["type"] = "soilSensor";
 	
 	AnalogSensor::store(json);
+}
+
+void SoilSensor::toString( char* string, uint8_t maxLength )
+{
+	String str = String("Soil sensor:") + mMeasuredValue;
+	
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
 }

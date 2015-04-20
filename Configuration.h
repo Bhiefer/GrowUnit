@@ -13,7 +13,7 @@
 #include "LightSensor.h"
 #include "AlwaysCondition.h"
 #include "Structs.h"
-#include "Pcd8544Output.h"
+#include "Pcd8544Viewer.h"
 #include "DigitalSensor.h"
 #include "TimePrecondition.h"
 #include "SoilSensor.h"
@@ -36,7 +36,7 @@ extern RelayOutput relayOutput;
 
 extern SerialViewer serialViewer;
 extern PlotlyViewer plotlyViewer;
-//extern Pcd8544Output pcd8544Viewer;
+extern Pcd8544Viewer pcd8544Viewer;
 
 static Sensor* sensors[] = {
 //	&dhtSensor,
@@ -53,8 +53,8 @@ static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
 static Viewer* viewers[] = {
 	&serialViewer,
-	&plotlyViewer
-//	&pcd8544Viewer
+//	&plotlyViewer,
+	&pcd8544Viewer
 };
 static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 
@@ -66,7 +66,7 @@ static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(Sens
 static Mapping mapping[] = {
 //	{&dhtSensor, &lessThan, &relayOutput},
 //	{&soilSensor, &always, &pcd8544Output},
-	{&soilSensor, &always, &relayOutput}
+	{&soilSensor, &lessThan, &relayOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

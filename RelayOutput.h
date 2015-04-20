@@ -10,13 +10,14 @@
 #define __RELAYOUTPUT_H__
 
 #include "Output.h"
+#include "Time.h"
 
 class RelayOutput: public Output
 {
 //variables
 public:
 	uint8_t mPin;
-	uint16_t mLastOnTime;
+	time_t mLastOnTime;
 	uint16_t mOnTime;
 	bool mTurnOn;
 	bool mIsTurnedOn; 
@@ -33,6 +34,8 @@ public:
 	virtual int16_t getStateValue();
 	
 	virtual void store(JsonObject& json);
+	
+	virtual void toString( char* string, uint8_t maxLength );
 protected:
 private:
 

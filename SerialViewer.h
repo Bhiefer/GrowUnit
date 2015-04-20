@@ -10,11 +10,13 @@
 #define __SERIALOUTPUT_H__
 
 #include "Viewer.h"
+#include "Time.h"
 
 class SerialViewer : public Viewer
 {
 //variables
 public:
+	time_t mLastTimeSent;
 protected:
 private:
 

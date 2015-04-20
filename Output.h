@@ -31,7 +31,7 @@ class Output : public Object
 		return 0;
 	}
 	
-	virtual char * toString();
+	virtual void toString(char* string, uint8_t maxLength);
 
 }; //Output
 
