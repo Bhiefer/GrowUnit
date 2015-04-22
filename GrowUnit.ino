@@ -48,7 +48,7 @@ void setup()
 	
 	// SET CLOCK
 // 	DS3231RTC t;
-// 	t.set(1427620515);
+// 	t.set(1429698480);
 
 	for(i = 0; i < viewersSize; i++)
 	{

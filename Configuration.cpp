@@ -36,8 +36,8 @@ AlwaysCondition always(ALWAYS_CONDITION);
 LessThanCondition lessThan(LESS_THAN_800_CONDITION,20);
 
 // nejak 20 sekund na napusteni
-RelayOutput relayOutput(RELAY_OUTPUT, 7, 20);
+RelayOutput relayOutput(RELAY_OUTPUT, 22, 20);
 
 SerialViewer serialViewer(SERIAL_VIEWER);
 PlotlyViewer plotlyViewer(PLOTLY_VIEWER);
-Pcd8544Viewer pcd8544Viewer(LCD_VIEWER, 2,3,4,5,6);
+//Pcd8544Viewer pcd8544Viewer(LCD_VIEWER, 2,3,4,5,6);

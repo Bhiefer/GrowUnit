@@ -36,7 +36,7 @@ extern RelayOutput relayOutput;
 
 extern SerialViewer serialViewer;
 extern PlotlyViewer plotlyViewer;
-extern Pcd8544Viewer pcd8544Viewer;
+//extern Pcd8544Viewer pcd8544Viewer;
 
 static Sensor* sensors[] = {
 //	&dhtSensor,
@@ -53,8 +53,8 @@ static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
 static Viewer* viewers[] = {
 	&serialViewer,
-//	&plotlyViewer,
-	&pcd8544Viewer
+	&plotlyViewer,
+//	&pcd8544Viewer
 };
 static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 

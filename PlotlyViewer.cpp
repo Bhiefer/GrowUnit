@@ -36,7 +36,10 @@ uint8_t PlotlyViewer::onCreate()
 	Serial.println("... Done initializing ethernet");
 	delay(1000);
 
-	fileopt="overwrite"; // See the "Usage" section in https://github.com/plotly/arduino-api for details
+	timezone = "Europe/Prague";
+	maxpoints = 200;
+//	fileopt="overwrite"; // See the "Usage" section in https://github.com/plotly/arduino-api for details
+	fileopt="extend";
 	bool success;
 	success = init();
 	if(!success){while(true){}}
@@ -55,12 +58,12 @@ uint8_t PlotlyViewer::onMeasured()
 		int token = 0;
 		for(i = 0; i < sensorsSize && token < PLOTLY_TOKENS_SIZE; i++)
 		{
-			plot(millis(), sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
+			plot(timer.current()*1000, sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
 		}
 		
 		for(i = 0; i < outputsSize && token < PLOTLY_TOKENS_SIZE; i++)
 		{
-			plot(millis(), outputs[i]->getStateValue(), PLOTLY_TOKENS[token++]);
+			plot(timer.current()*1000, outputs[i]->getStateValue(), PLOTLY_TOKENS[token++]);
 		}
 	}
 }

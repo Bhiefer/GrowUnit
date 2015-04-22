@@ -76,7 +76,7 @@ void RelayOutput::store( JsonObject& json )
 
 int16_t RelayOutput::getStateValue()
 {
-	return mIsTurnedOn ? 1024 : 0;
+	return mIsTurnedOn ? 256 : 0;
 }
 
 void RelayOutput::toString( char* string, uint8_t maxLength )
