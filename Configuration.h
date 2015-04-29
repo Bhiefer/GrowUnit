@@ -21,6 +21,7 @@
 #include "RelayOutput.h"
 #include "LessThanCondition.h"
 #include "PlotlyViewer.h"
+#include "Medianator.h"
 
 //extern  LightSensor lightSensor;
 extern SoilSensor soilSensor;
@@ -30,7 +31,7 @@ extern SoilSensor soilSensor;
 extern AlwaysCondition always;
 extern LessThanCondition lessThan;
 
-extern TimePrecondition timePrecondition;
+//extern TimePrecondition timePrecondition;
 
 extern RelayOutput relayOutput;
 
@@ -58,10 +59,10 @@ static Viewer* viewers[] = {
 };
 static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 
-static SensorPrecondition preconditionMapping[] = {
-	{&timePrecondition, &soilSensor}
-};
-static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(SensorPrecondition);
+// static SensorPrecondition preconditionMapping[] = {
+// 	{&timePrecondition, &soilSensor}
+// };
+// static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(SensorPrecondition);
 
 static Mapping mapping[] = {
 //	{&dhtSensor, &lessThan, &relayOutput},

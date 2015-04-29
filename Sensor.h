@@ -13,6 +13,7 @@
 #include "Constants.h"
 #include "Condition.h"
 #include "Precondition.h"
+#include "ValueProcessor.h"
 #include "Structs.h"
 
 class Sensor :  public Object
@@ -21,10 +22,10 @@ class Sensor :  public Object
 		Rule mRules[MAX_RULES_COUNT];
 		uint8_t mRulesCnt;
 		
-		Precondition * mPrecondition;
+		Precondition* mPrecondition;
+		ValueProcessor* mValueProcessor;
 		
 		uint8_t mPin;
-		
 		
 		int16_t mMeasuredValue;
 	
@@ -36,10 +37,12 @@ class Sensor :  public Object
 		virtual int16_t measureValue() = 0;
 	
 	public:
-		Sensor(uint8_t id, uint8_t pin) : Object(id)
+		Sensor(uint8_t id, uint8_t pin, Precondition* precondition, ValueProcessor* valueProcessor) : Object(id)
 		{			
 			mPin = pin;
 			mRulesCnt = 0;
+			mPrecondition = precondition;
+			mValueProcessor = valueProcessor;
 		}
 
 		virtual uint8_t addRule(Condition * condition, Output * output);
@@ -54,7 +57,7 @@ class Sensor :  public Object
 			return mRulesCnt;
 		}
 		
-		virtual uint8_t setPrecondition(Precondition * precondition);
+		//virtual uint8_t setPrecondition(Precondition * precondition);
 		int16_t getMeasuredValue()
 		{
 			return mMeasuredValue;

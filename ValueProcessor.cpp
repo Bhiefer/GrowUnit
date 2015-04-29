@@ -10,7 +10,7 @@
 
 // functions
 
-// virtual destructor
-ValueProcessor::~ValueProcessor()
+void ValueProcessor::toString(char* string, uint8_t maxLength)
 {
-} //~ValueProcessor
+	memcpy(string, "Processor", 9);
+}

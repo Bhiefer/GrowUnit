@@ -20,7 +20,7 @@ class DhtTempSensor : public DhtSensor
 
 	//functions
 	public:
-	DhtTempSensor(uint8_t id, uint8_t pin) : DhtSensor(id, pin)
+	DhtTempSensor(uint8_t id, uint8_t pin, Precondition* precondition, ValueProcessor* valueProcessor) : DhtSensor(id, pin, precondition, valueProcessor)
 	{
 		
 	}

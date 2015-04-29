@@ -20,7 +20,7 @@ class DigitalSensor : public Sensor
 
 	//functions
 	public:
-	DigitalSensor(uint8_t id, uint8_t pin) : Sensor(id, pin) {};
+	DigitalSensor(uint8_t id, uint8_t pin, Precondition* precondition, ValueProcessor* valueProcessor) : Sensor(id, pin, precondition, valueProcessor) {};
 	protected:
 	virtual int16_t measureValue();
 	virtual uint8_t onCreate();

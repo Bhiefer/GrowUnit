@@ -21,7 +21,15 @@ uint8_t Sensor::measure()//virtual
 	for(uint8_t i = 0; i < mRulesCnt; i++)
 	{
 		Rule r = mRules[i];
-		mMeasuredValue = measureValue();
+		
+		if(mValueProcessor != NULL)
+		{
+			mMeasuredValue = mValueProcessor->process(measureValue());	
+		}
+		else
+		{
+			mMeasuredValue = measureValue();
+		}
 		
 		if(r.condition->check(mMeasuredValue))
 		{
@@ -72,10 +80,10 @@ uint8_t Sensor::onCreate()
 {
 }
 
-uint8_t Sensor::setPrecondition( Precondition * precondition )
-{
-	mPrecondition = precondition;
-}
+// uint8_t Sensor::setPrecondition( Precondition * precondition )
+// {
+// 	mPrecondition = precondition;
+// }
 
 void Sensor::store( JsonObject& json )
 {

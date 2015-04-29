@@ -22,6 +22,7 @@ by David A. Mellis
 #include <Time.h>
 #include <ArduinoJson.h>
 #include <JsonGenerator.h>
+#include <RunningMedian.h>
 #include "Configuration.h"
 #include "Timer.h"
 
@@ -65,10 +66,10 @@ void setup()
 		sensors[i]->onCreate();
 	}
 	
-	for(i = 0; i < preconditionMappingSize; i++)
-	{
-		preconditionMapping[i].sensor->setPrecondition(preconditionMapping[i].precondition);
-	}
+// 	for(i = 0; i < preconditionMappingSize; i++)
+// 	{
+// 		preconditionMapping[i].sensor->setPrecondition(preconditionMapping[i].precondition);
+// 	}
 	
 	for(i = 0; i < mappingSize; i++)
 	{

@@ -11,7 +11,10 @@
 #define DHT_HUM_SENSOR 3
 
 // PRECONDITIONS
-#define SHORT_TIME_PRECONDITION 0
+#define MINUTE_DELAY_PRECONDITION 0
+
+// VALUE_PROCESSORS
+#define MEDIANATOR_5 0
 
 // CONDITIONS
 #define ALWAYS_CONDITION 0
@@ -25,10 +28,12 @@
 #define PLOTLY_VIEWER 1
 #define LCD_VIEWER 2
 
-TimePrecondition timePrecondition(SHORT_TIME_PRECONDITION, 60);
+TimePrecondition timePrecondition(MINUTE_DELAY_PRECONDITION, 60);
+
+Medianator medianator(MEDIANATOR_5, 5);
 
 // LightSensor lightSensor(0);
-SoilSensor soilSensor(SOIL_SENSOR, 0);
+SoilSensor soilSensor(SOIL_SENSOR, 0, &timePrecondition, &medianator);
 // DigitalSensor digiSensor(6);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 

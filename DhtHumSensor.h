@@ -20,7 +20,7 @@ private:
 
 //functions
 public:
-	DhtHumSensor(uint8_t id, uint8_t pin) : DhtSensor(id, pin)
+	DhtHumSensor(uint8_t id, uint8_t pin, Precondition* precondition, ValueProcessor* valueProcessor) : DhtSensor(id, pin, precondition, valueProcessor)
 	{
 		
 	}

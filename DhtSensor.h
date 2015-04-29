@@ -24,7 +24,7 @@ private:
 
 //functions
 public:
-	DhtSensor(uint8_t id, uint8_t pin) : Sensor(id, pin)
+	DhtSensor(uint8_t id, uint8_t pin, Precondition* precondition, ValueProcessor* valueProcessor) : Sensor(id, pin, precondition, valueProcessor)
 	{
 		log = false;
 	}

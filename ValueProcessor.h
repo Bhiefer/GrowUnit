@@ -15,8 +15,13 @@ class ValueProcessor : public Object
 {
 //functions
 public:
-	virtual ~ValueProcessor();
+	ValueProcessor(uint8_t id) : Object(id)
+	{
+	}
+	
 	virtual int16_t process(int16_t value) = 0;
+	
+	virtual void toString(char* string, uint8_t maxLength);
 
 }; //ValueProcessor
 
