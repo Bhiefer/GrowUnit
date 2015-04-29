@@ -25,6 +25,8 @@ static const uint8_t SERVER_IP[] = { 192, 168, 0, 102};
 // System
 #define RESET_PIN 12
 
+#define ONE_SECOND 1
+#define ONE_MINUTE 60
 #define ONE_HOUR 3600
 
 #define TIMEZONE_SHIFT 2

@@ -20,33 +20,36 @@
 #include "AndCondition.h"
 #include "PlotlyViewer.h"
 #include "Medianator.h"
+#include "NoSensor.h"
+#include "DayTimeCondition.h"
 
 //extern  LightSensor lightSensor;
-extern SoilSensor soilSensor;
 //extern DigitalSensor digiSensor;
 //extern DhtHumSensor dhtSensor;
 
-//extern AlwaysCondition always;
+extern SoilSensor soilSensor;
+extern NoSensor noSensor;
+
 extern AndCondition floodCondition;
+extern DayTimeCondition morningCondition;
+extern DayTimeCondition afternoonCondition;
 
-//extern TimePrecondition timePrecondition;
-
-extern RelayOutput relayOutput;
+extern RelayOutput waterPumpRelayOutput;
+extern RelayOutput airPumpRelayOutput;
 
 extern SerialViewer serialViewer;
 extern PlotlyViewer plotlyViewer;
 //extern Pcd8544Viewer pcd8544Viewer;
 
 static Sensor* sensors[] = {
-//	&dhtSensor,
-//	&lightSensor,
   &soilSensor,
-//	&digiSensor
+  &noSensor,
 };
 static uint8_t sensorsSize = sizeof(sensors)/sizeof(Sensor*);
 
 static Output* outputs[] = {
-	&relayOutput
+	&waterPumpRelayOutput,
+	&airPumpRelayOutput
 };
 static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
@@ -57,15 +60,10 @@ static Viewer* viewers[] = {
 };
 static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 
-// static SensorPrecondition preconditionMapping[] = {
-// 	{&timePrecondition, &soilSensor}
-// };
-// static uint8_t preconditionMappingSize = sizeof(preconditionMapping)/sizeof(SensorPrecondition);
-
 static Mapping mapping[] = {
-//	{&dhtSensor, &lessThan, &relayOutput},
-//	{&soilSensor, &always, &pcd8544Output},
-	{&soilSensor, &floodCondition, &relayOutput}
+	{&soilSensor, &floodCondition, &waterPumpRelayOutput},
+	{&noSensor, &morningCondition, &airPumpRelayOutput},
+	{&noSensor, &afternoonCondition, &airPumpRelayOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

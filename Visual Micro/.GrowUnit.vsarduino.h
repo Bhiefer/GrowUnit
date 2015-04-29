@@ -15,7 +15,10 @@
 #define __AVR__
 extern "C" void __cxa_pure_virtual() {;}
 
+void reset();
 //
+void printHeader();
+void printDigits(int digits);
 //
 
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\mega\pins_arduino.h" 
@@ -36,6 +39,8 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <DHT.h>
 #include <Data.cpp>
 #include <Data.h>
+#include <DayTimeCondition.cpp>
+#include <DayTimeCondition.h>
 #include <DhtHumSensor.cpp>
 #include <DhtHumSensor.h>
 #include <DhtSensor.cpp>
@@ -57,10 +62,11 @@ extern "C" void __cxa_pure_virtual() {;}
 #include <LessThanCondition.h>
 #include <LightSensor.cpp>
 #include <LightSensor.h>
-#include <MedianatorFive.cpp>
-#include <MedianatorFive.h>
+#include <Medianator.cpp>
+#include <Medianator.h>
 #include <MemoryFree.cpp>
 #include <MemoryFree.h>
+#include <NoSensor.h>
 #include <Object.cpp>
 #include <Object.h>
 #include <Output.cpp>

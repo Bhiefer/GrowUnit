@@ -38,8 +38,8 @@ uint8_t PlotlyViewer::onCreate()
 
 	timezone = "Europe/Prague";
 	maxpoints = PLOTLY_PLOT_SIZE * 3600 / PLOTLY_INTERVAL;
-	fileopt="overwrite";
-//	fileopt="extend";
+//	fileopt="overwrite";
+	fileopt="extend";
 	bool success;
 	success = init();
 	if(!success)

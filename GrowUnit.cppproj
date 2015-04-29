@@ -688,6 +688,9 @@ build.arch=AVR
     <Compile Include="Medianator.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="NoSensor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Pcd8544Viewer.cpp">
       <SubType>compile</SubType>
     </Compile>
