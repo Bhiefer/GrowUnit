@@ -10,8 +10,6 @@
 #define CONFIGURATION_H_
 
 #include "SerialViewer.h"
-#include "LightSensor.h"
-#include "AlwaysCondition.h"
 #include "Structs.h"
 #include "Pcd8544Viewer.h"
 #include "DigitalSensor.h"
@@ -19,7 +17,7 @@
 #include "SoilSensor.h"
 #include "DhtHumSensor.h"
 #include "RelayOutput.h"
-#include "LessThanCondition.h"
+#include "AndCondition.h"
 #include "PlotlyViewer.h"
 #include "Medianator.h"
 
@@ -28,8 +26,8 @@ extern SoilSensor soilSensor;
 //extern DigitalSensor digiSensor;
 //extern DhtHumSensor dhtSensor;
 
-extern AlwaysCondition always;
-extern LessThanCondition lessThan;
+//extern AlwaysCondition always;
+extern AndCondition floodCondition;
 
 //extern TimePrecondition timePrecondition;
 
@@ -67,7 +65,7 @@ static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 static Mapping mapping[] = {
 //	{&dhtSensor, &lessThan, &relayOutput},
 //	{&soilSensor, &always, &pcd8544Output},
-	{&soilSensor, &lessThan, &relayOutput}
+	{&soilSensor, &floodCondition, &relayOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);
 

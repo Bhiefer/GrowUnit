@@ -4,6 +4,9 @@
 
 #include "Configuration.h"
 
+#include "LessThanCondition.h"
+#include "DayTimeCondition.h"
+
 // SENSORS
 #define LIGHT_SENSOR 0
 #define SOIL_SENSOR 1
@@ -19,6 +22,8 @@
 // CONDITIONS
 #define ALWAYS_CONDITION 0
 #define LESS_THAN_800_CONDITION 1
+#define DAY_CONDITION 2
+#define FLOOD_CONDITION 3
 
 // OUTPUTS
 #define RELAY_OUTPUT 0
@@ -37,10 +42,12 @@ SoilSensor soilSensor(SOIL_SENSOR, 0, &timePrecondition, &medianator);
 // DigitalSensor digiSensor(6);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
-AlwaysCondition always(ALWAYS_CONDITION);
-LessThanCondition lessThan(LESS_THAN_800_CONDITION,40);
+//AlwaysCondition always(ALWAYS_CONDITION);
+LessThanCondition lessThan(LESS_THAN_800_CONDITION,50);
+DayTimeCondition dayTime(DAY_CONDITION, 7, 18);
+AndCondition floodCondition(FLOOD_CONDITION, &dayTime, &lessThan);
 
-// nejak 20 sekund na napusteni
+// nejak 19 sekund na napusteni
 RelayOutput relayOutput(RELAY_OUTPUT, 22, 19);
 
 SerialViewer serialViewer(SERIAL_VIEWER);

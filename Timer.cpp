@@ -8,6 +8,8 @@
 
 #include "Timer.h"
 
+#include "Constants.h"
+
 Timer timer;
 
 // default constructor
@@ -20,6 +22,11 @@ Timer::Timer()
 time_t Timer::current()
 {
 	return mRtc.get();
+}
+
+time_t Timer::currentLocal()
+{
+	return mRtc.get() + TIMEZONE_SHIFT_SECONDS;
 }
 
 bool Timer::checkElapsed( time_t last, time_t period )

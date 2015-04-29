@@ -619,6 +619,12 @@ build.arch=AVR
     <Compile Include="Data.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="DayTimeCondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="DayTimeCondition.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="DHT.cpp">
       <SubType>compile</SubType>
     </Compile>

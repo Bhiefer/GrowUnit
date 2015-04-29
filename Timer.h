@@ -25,6 +25,7 @@ public:
 	Timer();
 	
 	time_t current();
+	time_t currentLocal();
 	bool checkElapsed(time_t last, time_t period);
 	float getTemp();
 	

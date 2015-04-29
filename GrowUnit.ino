@@ -29,23 +29,20 @@ by David A. Mellis
 
 static int16_t counter;
 
-// // Enter a MAC address for your controller below.
-// // Newer Ethernet shields have a MAC address printed on a sticker on the shield
-// byte mac[] = {  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-// byte ip[] = { 192, 168, 1, 88 };
-// IPAddress server(192,168,1,102); // Google
-//
-// LightSensor sensor(1);
-//
-// // Initialize the Ethernet client library
-// // with the IP address and port of the server
-// // that you want to connect to (port 80 is default for HTTP):
-//
+void reset()
+{
+	digitalWrite(RESET_PIN, LOW);
+}
 
 void setup()
 {
+	digitalWrite(RESET_PIN, HIGH);
+	delay(2000);
+	pinMode(RESET_PIN, OUTPUT);     
+	
 	counter = 0;
 	uint8_t i = 0;
+	uint8_t res = RC_OK;
 	
 	// SET CLOCK
 // 	DS3231RTC t;
@@ -53,7 +50,12 @@ void setup()
 
 	for(i = 0; i < viewersSize; i++)
 	{
-		viewers[i]->onCreate();
+		res = viewers[i]->onCreate();
+		
+		if(res == RC_FATAL_FAILURE)
+		{
+			reset();
+		}
 	}
 	
 	for(i = 0; i < outputsSize; i++)
@@ -79,7 +81,7 @@ void setup()
 
 void printHeader()
 {
-	time_t t = timer.current();
+	time_t t = timer.currentLocal();
 	
 	Serial.print(day(t));
 	Serial.print('.');

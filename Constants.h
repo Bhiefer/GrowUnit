@@ -22,6 +22,13 @@ static const uint8_t SERVER_IP[] = { 192, 168, 0, 102};
 // #define SERVER_IP {192, 168, 1, 102}
 #define SERVER_PORT 80
 
+// System
+#define RESET_PIN 12
+
+#define ONE_HOUR 3600
+
+#define TIMEZONE_SHIFT 2
+#define TIMEZONE_SHIFT_SECONDS (TIMEZONE_SHIFT*ONE_HOUR)
 
 // Plotly
 #define PLOTLY_USERNAME "Bhiefer"
@@ -29,7 +36,8 @@ static const uint8_t SERVER_IP[] = { 192, 168, 0, 102};
 #define PLOTLY_FILENAME "test"
 #define PLOTLY_TOKENS_SIZE 2
 static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
-#define PLOTLY_INTERVAL 20
+#define PLOTLY_INTERVAL 20 // in seconds
+#define PLOTLY_PLOT_SIZE 8 // in hours
 
 // LCD
 #define LCD_INTERVAL 5
@@ -49,6 +57,8 @@ static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
 #define RC_OUT_OF_MEMORY_INSTANCE_FULL 20
 
 #define RC_PRECONDITION_NOT_MET 30
+
+#define RC_FATAL_FAILURE 40
 
 
 

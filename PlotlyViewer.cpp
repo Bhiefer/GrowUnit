@@ -37,12 +37,15 @@ uint8_t PlotlyViewer::onCreate()
 	delay(1000);
 
 	timezone = "Europe/Prague";
-	maxpoints = 200;
-//	fileopt="overwrite"; // See the "Usage" section in https://github.com/plotly/arduino-api for details
-	fileopt="extend";
+	maxpoints = PLOTLY_PLOT_SIZE * 3600 / PLOTLY_INTERVAL;
+	fileopt="overwrite";
+//	fileopt="extend";
 	bool success;
 	success = init();
-	if(!success){while(true){}}
+	if(!success)
+	{
+		return RC_FATAL_FAILURE;
+	}
 	openStream();
 	
 	mLastTimeSent = timer.current();
