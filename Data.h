@@ -21,6 +21,8 @@ public:
 protected:
 private:
 	StaticJsonBuffer<150> mBuffer;
+	
+	
 
 //functions
 public:

@@ -43,7 +43,7 @@ void Data::store()
 	JsonObject& root = mBuffer.createObject();
 	
 	getSensorObject(root);
-	getOutputObject(root);
+	//getOutputObject(root);
 	
 	root.prettyPrintTo(Serial);
 	Serial.println();

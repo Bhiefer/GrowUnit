@@ -33,10 +33,10 @@ SoilSensor soilSensor(SOIL_SENSOR, 0);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
 AlwaysCondition always(ALWAYS_CONDITION);
-LessThanCondition lessThan(LESS_THAN_800_CONDITION,20);
+LessThanCondition lessThan(LESS_THAN_800_CONDITION,40);
 
 // nejak 20 sekund na napusteni
-RelayOutput relayOutput(RELAY_OUTPUT, 22, 20);
+RelayOutput relayOutput(RELAY_OUTPUT, 22, 19);
 
 SerialViewer serialViewer(SERIAL_VIEWER);
 PlotlyViewer plotlyViewer(PLOTLY_VIEWER);

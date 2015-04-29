@@ -63,8 +63,8 @@ uint8_t RelayOutput::onMeasured()
 
 uint8_t RelayOutput::onCreate()
 {
-	//digitalWrite(mPin, LOW);
 	pinMode(mPin, OUTPUT);
+	digitalWrite(mPin, HIGH);
 }
 
 void RelayOutput::store( JsonObject& json )
