@@ -16,14 +16,27 @@ bool DayTimeCondition::check( int16_t value )
 	
 	if(mFrom < mTo)
 	{
+		
+// 		Serial.println("qqq");
+// 		Serial.println(mFrom);
+// 		Serial.println(mTo);
+// 		Serial.println(h);
+		
 		return h >= mFrom && h < mTo; 
 	}
 	else if(mFrom == mTo)
 	{
+// 		Serial.println("aaa");
+// 		Serial.println(mFrom);
+// 		Serial.println(h);
 		return h == mFrom;
 	}
 	else
 	{
+// 		Serial.println("ttt");
+// 		Serial.println(mFrom);
+// 		Serial.println(mTo);
+// 		Serial.println(h);
 		return h > mFrom || h < mTo;
 	}
 }

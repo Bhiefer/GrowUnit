@@ -24,6 +24,8 @@ uint8_t mTo;
 public:
 DayTimeCondition(uint8_t id, uint8_t fromHour, uint8_t toHour): Condition(id)
 {
+	mFrom = fromHour;
+	mTo = toHour;
 }
 
 virtual bool check(int16_t value);

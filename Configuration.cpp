@@ -51,7 +51,7 @@ LessThanCondition lessThan(LESS_THAN_800_CONDITION,50);
 DayTimeCondition dayTime(DAY_CONDITION, 7, 18);
 AndCondition floodCondition(FLOOD_CONDITION, &dayTime, &lessThan);
 DayTimeCondition morningCondition(MORNING_CONDITION, 9, 9);
-DayTimeCondition afternoonCondition(MORNING_CONDITION, 16, 16);
+DayTimeCondition afternoonCondition(AFTERNOON_CONDITION, 16, 16);
 
 // nejak 19 sekund na napusteni
 RelayOutput waterPumpRelayOutput(WATERPUMP_RELAY_OUTPUT, 22, 19*ONE_SECOND);

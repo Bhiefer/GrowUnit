@@ -31,14 +31,14 @@ static int16_t counter;
 
 void reset()
 {
-	digitalWrite(RESET_PIN, LOW);
+//	digitalWrite(RESET_PIN, LOW);
 }
 
 void setup()
 {
-	digitalWrite(RESET_PIN, HIGH);
-	delay(2000);
-	pinMode(RESET_PIN, OUTPUT);     
+// 	digitalWrite(RESET_PIN, HIGH);
+// 	delay(2000);
+// 	pinMode(RESET_PIN, OUTPUT);     
 	
 	counter = 0;
 	uint8_t i = 0;
