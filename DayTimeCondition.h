@@ -14,23 +14,19 @@
 class DayTimeCondition : public Condition
 {
 //variables
-public:
-protected:
 private:
-uint8_t mFrom;
-uint8_t mTo;
+	uint8_t mFrom;
+	uint8_t mTo;
 
 //functions
 public:
-DayTimeCondition(uint8_t id, uint8_t fromHour, uint8_t toHour): Condition(id)
-{
-	mFrom = fromHour;
-	mTo = toHour;
-}
+	DayTimeCondition(uint8_t id, uint8_t fromHour, uint8_t toHour): Condition(id)
+	{
+		mFrom = fromHour;
+		mTo = toHour;
+	}
 
-virtual bool check(int16_t value);
-protected:
-private:
+	virtual bool check(int16_t value);
 
 }; //DayTimeCondition
 

@@ -20,7 +20,7 @@ private:
 
 //functions
 public:
-	NoSensor(uint8_t id): Sensor(id, -1, NULL, NULL)
+	NoSensor(uint8_t id, Precondition* precondition): Sensor(id, -1, precondition, NULL)
 	{
 	}
 	

@@ -22,6 +22,7 @@
 #include "Medianator.h"
 #include "NoSensor.h"
 #include "DayTimeCondition.h"
+#include "HourCondition.h"
 
 //extern  LightSensor lightSensor;
 //extern DigitalSensor digiSensor;
@@ -31,8 +32,8 @@ extern SoilSensor soilSensor;
 extern NoSensor noSensor;
 
 extern AndCondition floodCondition;
-extern DayTimeCondition morningCondition;
-extern DayTimeCondition afternoonCondition;
+extern HourCondition morningCondition;
+extern HourCondition afternoonCondition;
 
 extern RelayOutput waterPumpRelayOutput;
 extern RelayOutput airPumpRelayOutput;

@@ -661,6 +661,12 @@ build.arch=AVR
     <Compile Include="EthernetOutput.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HourCondition.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HourCondition.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="ICondition.h">
       <SubType>compile</SubType>
     </Compile>

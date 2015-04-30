@@ -51,6 +51,8 @@ void printDigits(int digits);
 #include <DigitalSensor.h>
 #include <EthernetOutput.cpp>
 #include <EthernetOutput.h>
+#include <HourCondition.cpp>
+#include <HourCondition.h>
 #include <ICondition.h>
 #include <IObject.h>
 #include <IOutput.h>

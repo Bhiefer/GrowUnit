@@ -21,7 +21,7 @@
 
 // CONDITIONS
 #define ALWAYS_CONDITION 0
-#define LESS_THAN_800_CONDITION 1
+#define SOIL_DRY_CONDITION 1
 #define DAY_CONDITION 2
 #define FLOOD_CONDITION 3
 #define MORNING_CONDITION 4
@@ -36,22 +36,22 @@
 #define PLOTLY_VIEWER 1
 #define LCD_VIEWER 2
 
-TimePrecondition timePrecondition(MINUTE_DELAY_PRECONDITION, 60);
+TimePrecondition minutePrecondition(MINUTE_DELAY_PRECONDITION, 60);
 
 Medianator medianator(MEDIANATOR_5, 5);
 
 // LightSensor lightSensor(0);
-SoilSensor soilSensor(SOIL_SENSOR, 0, &timePrecondition, &medianator);
-NoSensor noSensor(NOTHING);
+SoilSensor soilSensor(SOIL_SENSOR, 0, &minutePrecondition, &medianator);
+NoSensor noSensor(NOTHING, &minutePrecondition);
 // DigitalSensor digiSensor(6);
 //DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
 //AlwaysCondition always(ALWAYS_CONDITION);
-LessThanCondition lessThan(LESS_THAN_800_CONDITION,50);
-DayTimeCondition dayTime(DAY_CONDITION, 7, 18);
-AndCondition floodCondition(FLOOD_CONDITION, &dayTime, &lessThan);
-DayTimeCondition morningCondition(MORNING_CONDITION, 9, 9);
-DayTimeCondition afternoonCondition(AFTERNOON_CONDITION, 16, 16);
+LessThanCondition soilDryCondition(SOIL_DRY_CONDITION,50);
+DayTimeCondition dayTimeCondition(DAY_CONDITION, 7, 18);
+AndCondition floodCondition(FLOOD_CONDITION, &dayTimeCondition, &soilDryCondition);
+HourCondition morningCondition(MORNING_CONDITION, 9);
+HourCondition afternoonCondition(AFTERNOON_CONDITION, 16);
 
 // nejak 19 sekund na napusteni
 RelayOutput waterPumpRelayOutput(WATERPUMP_RELAY_OUTPUT, 22, 19*ONE_SECOND);
