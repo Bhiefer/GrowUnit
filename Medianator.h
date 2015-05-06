@@ -15,8 +15,6 @@
 class Medianator : public ValueProcessor
 {
 //variables
-public:
-protected:
 private:
 	RunningMedian mMedian;
 
@@ -27,8 +25,6 @@ public:
 	}
 	
 	virtual int16_t process(int16_t value);
-protected:
-private:
 
 }; //Medianator
 

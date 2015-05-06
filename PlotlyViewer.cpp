@@ -36,6 +36,8 @@ uint8_t PlotlyViewer::onCreate()
 	Serial.println("... Done initializing ethernet");
 	delay(1000);
 
+//	log_level = 0;
+	convertTimestamp = true;
 	timezone = "Europe/Prague";
 	maxpoints = PLOTLY_PLOT_SIZE * 3600 / PLOTLY_INTERVAL;
 //	fileopt="overwrite";
@@ -48,7 +50,7 @@ uint8_t PlotlyViewer::onCreate()
 	}
 	openStream();
 	
-	mLastTimeSent = timer.current();
+	mLastTimeSent = 0;
 }
 
 uint8_t PlotlyViewer::onMeasured()
@@ -57,16 +59,25 @@ uint8_t PlotlyViewer::onMeasured()
 	{
 		mLastTimeSent = timer.current();
 		
+		
+//		unsigned long now = static_cast<unsigned long>(timer.current());
+		
+// 		Serial.print("NOW:");
+// 		Serial.println(now);
+// 		Serial.println(sizeof(unsigned long));
+		
 		int i = 0;
 		int token = 0;
 		for(i = 0; i < sensorsSize && token < PLOTLY_TOKENS_SIZE; i++)
 		{
-			plot(timer.current()*1000, sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
+			//plot(year(mLastTimeSent), month(mLastTimeSent), day(mLastTimeSent), hour(mLastTimeSent), minute(mLastTimeSent), second(mLastTimeSent), sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
+			plot(millis(), sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
 		}
 		
 		for(i = 0; i < outputsSize && token < PLOTLY_TOKENS_SIZE; i++)
 		{
-			plot(timer.current()*1000, outputs[i]->getStateValue(), PLOTLY_TOKENS[token++]);
+			//plot(year(mLastTimeSent), month(mLastTimeSent), day(mLastTimeSent), hour(mLastTimeSent), minute(mLastTimeSent), second(mLastTimeSent), outputs[i]->getStateValue(), PLOTLY_TOKENS[token++]);
+			plot(millis(), sensors[i]->getMeasuredValue(), PLOTLY_TOKENS[token++]);
 		}
 	}
 }

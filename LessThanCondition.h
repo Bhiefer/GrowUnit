@@ -10,25 +10,25 @@
 #define __LESSTHANCONDITION_H__
 
 #include "Condition.h"
+#include "Time.h"
 
 class LessThanCondition : public Condition
 {
 //variables
-public:
-protected:
 private:
 	int16_t mTreshold;
+	time_t mLastTime;
+	boolean mAdjusted;
 
 //functions
 public:
 	LessThanCondition(uint8_t id, int16_t treshold): Condition(id)
 	{
 		mTreshold = treshold;
+		mAdjusted = false;
 	}
 	
 	virtual bool check(int16_t value);
-protected:
-private:
 
 }; //LessThanCondition
 

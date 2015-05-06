@@ -23,6 +23,7 @@ by David A. Mellis
 #include <ArduinoJson.h>
 #include <JsonGenerator.h>
 #include <RunningMedian.h>
+#include <RunningAverage.h>
 #include "Configuration.h"
 #include "Timer.h"
 

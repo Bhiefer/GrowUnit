@@ -20,6 +20,7 @@ class plotly
         void jsonMiddle();
         void jsonEnd(char *token);
 
+		void plot(int year, int month, int date, int h, int m, int s, int y, char *token);
         void plot(unsigned long x, int y, char *token);
         void plot(unsigned long x, float y, char *token);
 
@@ -37,6 +38,7 @@ class plotly
         void print_(float d);
         void print_(char *d);
         void print_(const __FlashStringHelper* d);
+		void printDigits(int digits);
 
         int len_(int i);
         int len_(unsigned long i);

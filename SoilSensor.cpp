@@ -11,6 +11,7 @@
 int16_t SoilSensor::measureValue()
 {
 	int16_t i = 1024 - AnalogSensor::measureValue();
+//	i = min(i,256);
 	//Serial.println(i);
 	return i;
 }

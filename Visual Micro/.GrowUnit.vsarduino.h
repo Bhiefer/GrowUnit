@@ -30,6 +30,8 @@ void printDigits(int digits);
 #include <AnalogSensor.h>
 #include <AndCondition.cpp>
 #include <AndCondition.h>
+#include <Averager.cpp>
+#include <Averager.h>
 #include <Condition.cpp>
 #include <Condition.h>
 #include <Configuration.cpp>

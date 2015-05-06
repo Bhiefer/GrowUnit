@@ -5,6 +5,8 @@
 #include "Configuration.h"
 
 #include "LessThanCondition.h"
+#include "Medianator.h"
+#include "Averager.h"
 
 // SENSORS
 #define LIGHT_SENSOR 0
@@ -15,9 +17,11 @@
 
 // PRECONDITIONS
 #define MINUTE_DELAY_PRECONDITION 0
+#define PLOTLY_DELAY_PRECONDITION 1
 
 // VALUE_PROCESSORS
 #define MEDIANATOR_5 0
+#define AVERAGER_5 1
 
 // CONDITIONS
 #define ALWAYS_CONDITION 0
@@ -37,17 +41,19 @@
 #define LCD_VIEWER 2
 
 TimePrecondition minutePrecondition(MINUTE_DELAY_PRECONDITION, 60);
+TimePrecondition plotlyDelayPrecondition(PLOTLY_DELAY_PRECONDITION, PLOTLY_INTERVAL);
 
-Medianator medianator(MEDIANATOR_5, 5);
+// Medianator medianator(MEDIANATOR_5, 5);
+Averager averager(AVERAGER_5, 3);
 
 // LightSensor lightSensor(0);
-SoilSensor soilSensor(SOIL_SENSOR, 0, &minutePrecondition, &medianator);
+SoilSensor soilSensor(SOIL_SENSOR, 0, &plotlyDelayPrecondition, NULL);
 NoSensor noSensor(NOTHING, &minutePrecondition);
 // DigitalSensor digiSensor(6);
-//DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
+// DhtHumSensor dhtSensor(DHT_HUM_SENSOR,12);
 
-//AlwaysCondition always(ALWAYS_CONDITION);
-LessThanCondition soilDryCondition(SOIL_DRY_CONDITION,50);
+// AlwaysCondition always(ALWAYS_CONDITION);
+LessThanCondition soilDryCondition(SOIL_DRY_CONDITION, 420);
 DayTimeCondition dayTimeCondition(DAY_CONDITION, 7, 18);
 AndCondition floodCondition(FLOOD_CONDITION, &dayTimeCondition, &soilDryCondition);
 HourCondition morningCondition(MORNING_CONDITION, 9);

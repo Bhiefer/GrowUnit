@@ -35,7 +35,7 @@ static const uint8_t SERVER_IP[] = { 192, 168, 0, 102};
 // Plotly
 #define PLOTLY_USERNAME "Bhiefer"
 #define PLOTLY_API_KEY "r01kk61tqn"
-#define PLOTLY_FILENAME "test"
+#define PLOTLY_FILENAME "Chillies"
 #define PLOTLY_TOKENS_SIZE 2
 static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
 #define PLOTLY_INTERVAL 20 // in seconds

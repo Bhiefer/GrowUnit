@@ -17,12 +17,8 @@
 class Data
 {
 //variables
-public:
-protected:
 private:
-	StaticJsonBuffer<150> mBuffer;
-	
-	
+	StaticJsonBuffer<150> mBuffer;	
 
 //functions
 public:
@@ -33,8 +29,6 @@ public:
 	JsonObject& getOutputObject(JsonObject& root);
 	
 	void store();
-protected:
-private:
 
 }; //Data
 

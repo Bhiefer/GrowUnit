@@ -306,6 +306,35 @@ void plotly::plot(unsigned long x, int y, char *token){
 	reconnectStream();
 	jsonStart(len_(x)+len_(y));
 	print_(x);
+//	print_(F("000"));
+	jsonMiddle();
+	print_(y);
+	jsonEnd(token);
+}
+
+void plotly::printDigits(int digits)
+{
+	// utility function for digital clock display: prints leading 0
+	if(digits < 10)
+		print_(F("0"));
+		
+	print_(digits);
+}
+
+void plotly::plot(int year, int month, int date, int h, int m, int s, int y, char *token){
+	reconnectStream();
+	jsonStart(19+len_(y));
+	print_(year);
+	print_(F("-"));
+	printDigits(month);
+	print_(F("-"));
+	printDigits(date);
+	print_(F(" "));
+	printDigits(h);
+	print_(F(":"));
+	printDigits(m);
+	print_(F(":"));
+	printDigits(s);
 	jsonMiddle();
 	print_(y);
 	jsonEnd(token);
