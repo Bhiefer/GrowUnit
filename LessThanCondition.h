@@ -28,6 +28,8 @@ public:
 		mAdjusted = false;
 	}
 	
+	virtual void store(JsonObject& json);
+	
 	virtual bool check(int16_t value);
 
 }; //LessThanCondition

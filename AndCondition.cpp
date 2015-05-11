@@ -17,3 +17,8 @@ bool AndCondition::check( int16_t value )
 	return mFirst->check(value) && mSecond->check(value);
 }
 
+void AndCondition::store( JsonObject& json )
+{
+	//mSecond->store(json);
+}
+

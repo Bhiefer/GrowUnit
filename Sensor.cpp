@@ -91,10 +91,24 @@ void Sensor::store( JsonObject& json )
 	json["pin"] = mPin;
 	json["value"] = mMeasuredValue;
 	
-	if(mPrecondition != NULL)
-	{
-		mPrecondition->store(json.createNestedObject("precondition"));		
-	}
+// 	if(mPrecondition != NULL)
+// 	{
+// 		mPrecondition->store(json.createNestedObject("precondition"));		
+// 	}
+	
+// 	JsonArray& b = json.createNestedArray("outputs");
+// 	for(int i = 0; i < mRulesCnt; i++)
+// 	{
+// 		JsonObject& obj = b.createNestedObject();
+// 		mRules[i].output->store(obj);
+// 	}
+
+	JsonObject& con = json.createNestedObject("condition");
+	mRules[0].condition->store(con);
+	
+	JsonObject& obj = json.createNestedObject("output");
+	mRules[0].output->store(obj);
+
 }
 
 void Sensor::restore( JsonObject& json )

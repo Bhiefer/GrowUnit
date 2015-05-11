@@ -29,8 +29,8 @@ public:
 	}
 	
 	virtual bool check(int16_t value);
-protected:
-private:
+	
+	virtual void store(JsonObject& json);
 
 }; //AndCondition
 

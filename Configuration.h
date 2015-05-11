@@ -62,7 +62,7 @@ static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
 
 static Mapping mapping[] = {
 	{&soilSensor, &floodCondition, &waterPumpRelayOutput},
-//	{&noSensor, &morningCondition, &airPumpRelayOutput},
+	{&noSensor, &morningCondition, &airPumpRelayOutput},
 	{&noSensor, &afternoonCondition, &airPumpRelayOutput}
 };
 static uint8_t mappingSize = sizeof(mapping)/sizeof(Mapping);

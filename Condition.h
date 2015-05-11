@@ -9,7 +9,6 @@
 #ifndef __CONDITION_H__
 #define __CONDITION_H__
 
-#include "ICondition.h"
 #include "Object.h"
 
 class Condition : public Object

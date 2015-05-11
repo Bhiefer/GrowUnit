@@ -55,13 +55,6 @@ void printDigits(int digits);
 #include <EthernetOutput.h>
 #include <HourCondition.cpp>
 #include <HourCondition.h>
-#include <ICondition.h>
-#include <IObject.h>
-#include <IOutput.h>
-#include <IPrecondition.h>
-#include <ISensor.h>
-#include <IValueProcessor.h>
-#include <IViewer.h>
 #include <LessThanCondition.cpp>
 #include <LessThanCondition.h>
 #include <LightSensor.cpp>

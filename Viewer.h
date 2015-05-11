@@ -10,9 +10,8 @@
 #define __VIEWER_H__
 
 #include "Object.h"
-#include "IViewer.h"
 
-class Viewer: public IViewer, public Object
+class Viewer: public Object
 {
 	
 	//functions

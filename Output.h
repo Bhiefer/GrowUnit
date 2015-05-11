@@ -9,7 +9,6 @@
 #ifndef __OUTPUT_H__
 #define __OUTPUT_H__
 
-#include "IOutput.h"
 #include "Object.h"
 #include "Sensor.h"
 
