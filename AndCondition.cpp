@@ -10,11 +10,13 @@
 
 bool AndCondition::check( int16_t value )
 {
+	boolean first = mFirst->check(value);
+	boolean second = mSecond->check(value);
 	Serial.println("xxxxx");
 	Serial.println(value);
-	Serial.println(mFirst->check(value));
-	Serial.println(mSecond->check(value));
-	return mFirst->check(value) && mSecond->check(value);
+	Serial.println(first);
+	Serial.println(second);
+	return first && second;
 }
 
 void AndCondition::store( JsonObject& json )

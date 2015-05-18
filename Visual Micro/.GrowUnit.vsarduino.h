@@ -20,6 +20,7 @@ void reset();
 void printHeader();
 void printDigits(int digits);
 //
+uint32_t getConfigurationHash();
 
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\variants\mega\pins_arduino.h" 
 #include "c:\Development\Arduino\arduino-1.5.5\hardware\arduino\avr\cores\arduino\arduino.h"
@@ -82,6 +83,8 @@ void printDigits(int digits);
 #include <SerialViewer.h>
 #include <SoilSensor.cpp>
 #include <SoilSensor.h>
+#include <Ssd1306Viewer.cpp>
+#include <Ssd1306Viewer.h>
 #include <Structs.h>
 #include <TimePrecondition.cpp>
 #include <TimePrecondition.h>

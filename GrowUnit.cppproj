@@ -81,6 +81,8 @@
       <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility</Value>
@@ -101,6 +103,8 @@
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
       <Value>../../GrowUnit</Value>
@@ -135,6 +139,8 @@
       <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility</Value>
@@ -155,6 +161,8 @@
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
       <Value>../../GrowUnit</Value>
@@ -317,7 +325,7 @@ build.arch=AVR
         <arduino.upload.port>COM10</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
-    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/cores/arduino;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/variants/standard;c:/Development/Arduino/arduino-1.0.4/libraries/SPI;c:/Development/Arduino/arduino-1.0.4/libraries/SPI/utility;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet/utility;c:/Development/Arduino/arduino-1.0.4/libraries;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/libraries;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/cores/arduino;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/variants/standard;c:/Development/Arduino/arduino-1.0.4/libraries/SPI;c:/Development/Arduino/arduino-1.0.4/libraries/SPI/utility;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet/utility;c:/Development/Arduino/arduino-1.0.4/libraries;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/libraries;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility;c:/Development/Arduino/projects/libraries/Adafruit_SSD1306;c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility;c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex;c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -350,6 +358,8 @@ build.arch=AVR
       <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility</Value>
@@ -370,6 +380,8 @@ build.arch=AVR
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
       <Value>../../GrowUnit</Value>
@@ -404,6 +416,8 @@ build.arch=AVR
       <Value>C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility</Value>
+      <Value>c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage</Value>
       <Value>c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility</Value>
@@ -424,6 +438,8 @@ build.arch=AVR
       <Value>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_PCD8544</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility</Value>
+      <Value>c:/Development/Arduino/projects/libraries/Adafruit_SSD1306</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility</Value>
       <Value>c:/Development/Arduino/projects/libraries/Adafruit_GFX</Value>
       <Value>../../GrowUnit</Value>
@@ -586,7 +602,7 @@ build.arch=AVR
         <arduino.upload.port>COM10</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
-    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/cores/arduino;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/variants/standard;c:/Development/Arduino/arduino-1.0.4/libraries/SPI;c:/Development/Arduino/arduino-1.0.4/libraries/SPI/utility;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet/utility;c:/Development/Arduino/arduino-1.0.4/libraries;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/libraries;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/cores/arduino;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/standard;../../GrowUnit;c:/Development/Arduino/projects/libraries/Adafruit_GFX;c:/Development/Arduino/projects/libraries/Adafruit_GFX/utility;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544;c:/Development/Arduino/projects/libraries/Adafruit_PCD8544/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/SPI/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/src/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr;c:/Development/Arduino/arduino-1.5.5/libraries/Ethernet/arch/avr/utility;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC;c:/Development/Arduino/arduino-1.5.5/libraries/DS3231RTC/utility;c:/Development/Arduino/arduino-1.5.5/libraries;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries;C:/Program Files (x86)/Visual Micro/Visual Micro for Arduino/Micro Platforms/default/debuggers;c:/Development/Arduino/projects/libraries;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.5.5/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/libraries/Wire/utility;c:/Development/Arduino/arduino-1.5.5/libraries/Time;c:/Development/Arduino/arduino-1.5.5/libraries/Time/utility;c:/Development/Arduino/arduino-1.5.5/hardware/arduino/avr/variants/mega;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson;c:/Development/Arduino/arduino-1.5.5/libraries/ArduinoJson/utility;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/cores/arduino;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/variants/standard;c:/Development/Arduino/arduino-1.0.4/libraries/SPI;c:/Development/Arduino/arduino-1.0.4/libraries/SPI/utility;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet;c:/Development/Arduino/arduino-1.0.4/libraries/Ethernet/utility;c:/Development/Arduino/arduino-1.0.4/libraries;c:/Development/Arduino/arduino-1.0.4/hardware/arduino/libraries;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/include/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/avr/;c:/development/arduino/arduino-1.0.4/hardware/tools/avr/lib/gcc/avr/4.3.2/include/;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian;c:/Development/Arduino/arduino-1.5.5/libraries/RunningMedian/utility;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage;c:/Development/Arduino/arduino-1.5.5/libraries/RunningAverage/utility;c:/Development/Arduino/projects/libraries/Adafruit_SSD1306;c:/Development/Arduino/projects/libraries/Adafruit_SSD1306/utility;c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex;c:/Development/Arduino/arduino-1.5.5/libraries/EEPROMex/utility;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <ItemGroup>
     <None Include="GrowUnit.ino">
@@ -681,19 +697,7 @@ build.arch=AVR
     <Compile Include="HourCondition.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ICondition.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Configuration.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IPrecondition.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IValueProcessor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IViewer.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LessThanCondition.cpp">
@@ -741,16 +745,13 @@ build.arch=AVR
     <Compile Include="SoilSensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Ssd1306Viewer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Ssd1306Viewer.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Structs.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IObject.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="IOutput.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="ISensor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="LightSensor.cpp">

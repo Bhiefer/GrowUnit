@@ -25,7 +25,7 @@ void SoilSensor::store( JsonObject& json )
 
 void SoilSensor::toString( char* string, uint8_t maxLength )
 {
-	String str = String("Soil sensor:") + mMeasuredValue;
+	String str = String("Pudni senzor:") + mMeasuredValue;
 	
 	memcpy(string, str.c_str(), min(str.length(), maxLength));
 }

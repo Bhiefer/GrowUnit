@@ -81,7 +81,11 @@ int16_t RelayOutput::getStateValue()
 
 void RelayOutput::toString( char* string, uint8_t maxLength )
 {
-	String str = new String("Relay:") + mIsTurnedOn ?"ON":"OFF";
+	String str = String("Rele:");
+	str += "pin:";
+	str += mPin;
+	str += ",";
+	str += mIsTurnedOn ?"ON":"OFF";
 	memcpy(string, str.c_str(), min(str.length(), maxLength));
 }
 

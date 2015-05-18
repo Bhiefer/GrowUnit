@@ -28,6 +28,12 @@ public:
 	{
 		return 0;
 	}
+	
+	void toString( char* string, uint8_t maxLength )
+	{
+		String str = String("Bez senzoru");
+		memcpy(string, str.c_str(), min(str.length(), maxLength));
+	}
 
 }; //NoSensor
 

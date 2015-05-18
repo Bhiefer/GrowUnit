@@ -11,6 +11,7 @@
 
 #include "SerialViewer.h"
 #include "Structs.h"
+#include "Ssd1306Viewer.h"
 #include "Pcd8544Viewer.h"
 #include "DigitalSensor.h"
 #include "TimePrecondition.h"
@@ -39,6 +40,7 @@ extern RelayOutput airPumpRelayOutput;
 
 extern SerialViewer serialViewer;
 extern PlotlyViewer plotlyViewer;
+extern Ssd1306Viewer ssd1306Viewer;
 //extern Pcd8544Viewer pcd8544Viewer;
 
 static Sensor* sensors[] = {
@@ -55,10 +57,18 @@ static uint8_t outputsSize = sizeof(outputs)/sizeof(Output*);
 
 static Viewer* viewers[] = {
 	&serialViewer,
-	&plotlyViewer,
+//	&plotlyViewer,
+	&ssd1306Viewer
 //	&pcd8544Viewer
 };
 static uint8_t viewersSize = sizeof(viewers)/sizeof(Viewer*);
+
+static Condition* conditions[] = {
+	&floodCondition,
+	&morningCondition,
+	&afternoonCondition
+};
+static uint8_t conditionsSize = sizeof(conditions)/sizeof(Condition*);
 
 static Mapping mapping[] = {
 	{&soilSensor, &floodCondition, &waterPumpRelayOutput},

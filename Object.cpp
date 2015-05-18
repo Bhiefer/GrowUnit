@@ -24,4 +24,19 @@ void Object::restore( JsonObject& json )
 	
 }
 
+uint8_t Object::storeToEeprom( int16_t address )
+{
+	return 0;
+}
+
+uint8_t Object::restoreFromEeprom( int16_t address )
+{
+	return 0;
+}
+
+bool Object::isUsingEeprom()
+{
+	return false;
+}
+
 

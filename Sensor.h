@@ -68,6 +68,11 @@ class Sensor :  public Object
 			return mPin;
 		}
 		
+		Precondition* getPrecondition()
+		{
+			return mPrecondition;
+		}
+		
 		virtual uint8_t measure();
 		virtual uint8_t onCreate();
 		

@@ -53,6 +53,9 @@ static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
 #define MAX_RULES_COUNT 3
 #define MAX_MEASUREMENTS_COUNT 10
 
+// Hash
+#define HASH_INT_MULTIPLIER 11
+
 // RESULT CODES
 #define RC_OK 0
 

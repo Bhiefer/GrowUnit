@@ -15,16 +15,12 @@
 
 class Pcd8544Viewer : public Adafruit_PCD8544, public Viewer
 {
-private:
 //functions
 public:
 	Pcd8544Viewer(uint8_t id, int8_t rst, int8_t ce, int8_t dc, int8_t din, int8_t clk);
 	
 	virtual uint8_t onCreate();
 	virtual uint8_t onMeasured();
-
-protected:
-private:
 
 }; //Pcd8544Viewer
 

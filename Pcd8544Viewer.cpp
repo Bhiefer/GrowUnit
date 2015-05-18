@@ -25,23 +25,22 @@ uint8_t Pcd8544Viewer::onMeasured()
 	clearDisplay();
 	
 	setTextSize(1);
-	setTextColor(BLACK);
-	print("Puda:");
+	setTextColor(WHITE);
 	
-// 	char line[LCD_LINE_1_LENGTH];
-// 	memset(line, '\0', LCD_LINE_1_LENGTH);
-// 	
-// 	Sensor* sensor = sensors[currentSensor];
-// 	
-// 	sensor->toString(line, LCD_LINE_1_LENGTH);
-// 	println(line);
-// 	
-// 	for(uint8_t i = 0; i < sensor->getRulesCnt(); i++ )
-// 	{
-// 		memset(line, '\0', LCD_LINE_1_LENGTH);
-// 		sensor->getRules()[i].output->toString(line, LCD_LINE_1_LENGTH);
-// 		println(line);
-// 	}
+	char line[LCD_LINE_1_LENGTH];
+	memset(line, '\0', LCD_LINE_1_LENGTH);
+	
+	Sensor* sensor = sensors[currentSensor];
+	
+	sensor->toString(line, LCD_LINE_1_LENGTH);
+	println(line);
+	
+	for(uint8_t i = 0; i < sensor->getRulesCnt(); i++ )
+	{
+		memset(line, '\0', LCD_LINE_1_LENGTH);
+		sensor->getRules()[i].output->toString(line, LCD_LINE_1_LENGTH);
+		println(line);
+	}
 	
 	
 // 	uint8_t i = 0;

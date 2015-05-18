@@ -39,11 +39,12 @@ bool LessThanCondition::check( int16_t value )
 				Serial.print(": < 3 hodiny");
 			}
 			
+			Serial.println();
 			return false;
 		}
 		else
 		{
-			Serial.print(": > 3 hodiny");
+			Serial.println(": > 3 hodiny");
 			// sucho po vice nez trech hodinach -> zalit
 			mAdjusted = false;
 			mLastTime = timer.current();
@@ -58,7 +59,7 @@ bool LessThanCondition::check( int16_t value )
 		// zalit aspon co 8 hodin
 		if(timer.checkElapsed(mLastTime, 8*ONE_HOUR))
 		{
-			Serial.print(": > 8 hodin - ZALIT!");
+			Serial.println(": > 8 hodin - ZALIT!");
 			int dif = value - mTreshold;
 			mTreshold = mTreshold + (0.8*dif);
 		
@@ -68,13 +69,11 @@ bool LessThanCondition::check( int16_t value )
 		}
 		else
 		{
-			Serial.print(": < 8 hodin");
+			Serial.println(": < 8 hodin");
 			// mene nez osm hodin a je dostatecne zalito
 			return false;
 		}
 	}
-	
-	Serial.println();
 }
 
 void LessThanCondition::store( JsonObject& json )

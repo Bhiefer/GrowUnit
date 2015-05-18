@@ -29,6 +29,10 @@ class Object
 	virtual void store(JsonObject& json);
 	virtual void restore(JsonObject& json);
 	
+	virtual bool isUsingEeprom();
+	virtual uint8_t storeToEeprom(int16_t address);
+	virtual uint8_t restoreFromEeprom(int16_t address);
+	
 	virtual uint8_t getId()
 	{
 		return mId;
