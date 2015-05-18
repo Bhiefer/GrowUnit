@@ -27,6 +27,8 @@ class HourCondition : public Condition
 	}
 
 	virtual bool check(int16_t value);
+	
+	virtual void toString(char* string, uint8_t maxLength);
 
 }; //HourCondition
 

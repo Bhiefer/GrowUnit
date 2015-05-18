@@ -16,8 +16,10 @@
 
 class Ssd1306Viewer : public Adafruit_SSD1306, public Viewer
 {
+private:
+	uint8_t mTotalPages;
 	//functions
-	public:
+public:
 	Ssd1306Viewer(uint8_t id, int8_t d0, int8_t d1, int8_t rst, int8_t dc, int8_t cs);
 	
 	virtual uint8_t onCreate();

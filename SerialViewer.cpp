@@ -18,7 +18,7 @@ SerialViewer::SerialViewer(uint8_t id): Viewer(id)
 uint8_t SerialViewer::onCreate()
 {
 	// Open serial communications and wait for port to open:
-	Serial.begin(SERIAL_SPEED);	
+	//Serial.begin(SERIAL_SPEED);	
 	
 	mLastTimeSent = 0;
 }

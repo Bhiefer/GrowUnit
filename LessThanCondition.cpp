@@ -9,6 +9,7 @@
 #include "LessThanCondition.h"
 #include "Timer.h"
 #include "Constants.h"
+#include <EEPROMex.h>
 
 
 bool LessThanCondition::check( int16_t value )
@@ -82,3 +83,68 @@ void LessThanCondition::store( JsonObject& json )
 	json["treshold"] = mTreshold;
 	json["interval"] = timer.current() - mLastTime;
 }
+
+uint8_t LessThanCondition::storeToEeprom( int16_t address )
+{
+	EEPROM.updateLong(address, mLastTime);
+	uint8_t size = sizeof(mLastTime);
+	EEPROM.updateInt(address + size, mTreshold);
+	size += sizeof(mTreshold);
+	EEPROM.updateByte(address+size, mAdjusted);
+	
+// 	Serial.print("Store:");
+// 	Serial.print(mLastTime);
+// 	Serial.print(",");
+// 	Serial.print(mTreshold);
+// 	Serial.print(",");
+// 	Serial.println(mAdjusted);
+	
+	return size +1;	
+}
+
+uint8_t LessThanCondition::restoreFromEeprom( int16_t address )
+{	
+	mLastTime = EEPROM.readLong(address);
+	uint8_t size = sizeof(mLastTime);
+	mTreshold = EEPROM.readInt(address + size);
+	size += sizeof(mTreshold);
+	mAdjusted = EEPROM.readByte(address+size);
+	
+// 	Serial.print("Restore:");
+// 	Serial.print(mLastTime);
+// 	Serial.print(",");
+// 	Serial.print(mTreshold);
+// 	Serial.print(",");
+// 	Serial.println(mAdjusted);
+	
+	return size +1;
+}
+
+void LessThanCondition::toString( char* string, uint8_t maxLength )
+{
+	time_t last = mLastTime + TIMEZONE_SHIFT_SECONDS;
+	String str = String("x<") + mTreshold;
+	str += ",";
+	str += day(last);
+	str += ".";
+	str += month(last);
+	str += ". ";
+	str += hour(last);
+	str += ":";
+	if(minute(last) < 10)
+		Serial.print(F("0"));
+	str += minute(last);
+	
+	if(mAdjusted)
+	{
+		str += ",A";
+	}
+	else
+	{
+		str += ",N";
+	}
+	
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
+}
+
+

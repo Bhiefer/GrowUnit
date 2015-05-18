@@ -31,6 +31,12 @@ public:
 	virtual void store(JsonObject& json);
 	
 	virtual bool check(int16_t value);
+	
+	virtual bool isUsingEeprom() { return true; }
+	virtual uint8_t storeToEeprom(int16_t address);
+	virtual uint8_t restoreFromEeprom(int16_t address);
+	
+	virtual void toString(char* string, uint8_t maxLength);
 
 }; //LessThanCondition
 

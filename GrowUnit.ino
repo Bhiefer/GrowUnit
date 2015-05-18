@@ -29,6 +29,7 @@ by David A. Mellis
 #include "Configuration.h"
 #include "Timer.h"
 
+#undef _EEPROMEX_DEBUG 
 
 static int16_t counter;
 
@@ -41,8 +42,12 @@ void reset()
 void setup()
 {
 // 	digitalWrite(RESET_PIN, HIGH);
-// 	delay(2000);
+	
+ 	delay(1000);
 // 	pinMode(RESET_PIN, OUTPUT);     
+
+	Serial.begin(SERIAL_SPEED);	
+	Serial.println(F("Start"));
 	
 	counter = 0;
 	uint8_t i = 0;
@@ -54,25 +59,22 @@ void setup()
 
 	int16_t eeprom = 0;
 	
-	uint32_t hash = EEPROM.readLong(eeprom);
-	eeprom += sizeof(uint32_t);
-	
-	bool hashValid = hash == getConfigurationHash();
-
-	for(i = 0; i < viewersSize; i++)
+	while(!EEPROM.isReady())
 	{
- 		if(hashValid && viewers[i]->isUsingEeprom())
- 		{
- 			eeprom += viewers[i]->restoreFromEeprom(eeprom);
- 		}
 		
-		res = viewers[i]->onCreate();
-		
-		if(res == RC_FATAL_FAILURE)
-		{
-			reset();
-		}
 	}
+	
+	uint32_t lastHash = EEPROM.readLong(eeprom);
+	eeprom += sizeof(uint32_t);
+	uint32_t currentHash = getConfigurationHash();
+	
+	bool hashValid = lastHash == currentHash;
+	
+	Serial.print(F("Hash:"));
+	Serial.print(lastHash);
+	Serial.print(F("vs."));
+	Serial.println(currentHash);
+	Serial.println(hashValid);	
 	
 	for(i = 0; i < outputsSize; i++)
 	{
@@ -105,6 +107,21 @@ void setup()
 	for(i = 0; i < mappingSize; i++)
 	{
 		mapping[i].sensor->addRule(mapping[i].condition, mapping[i].output);
+	}
+	
+	for(i = 0; i < viewersSize; i++)
+	{
+		if(hashValid && viewers[i]->isUsingEeprom())
+		{
+			eeprom += viewers[i]->restoreFromEeprom(eeprom);
+		}
+		
+		res = viewers[i]->onCreate();
+		
+		if(res == RC_FATAL_FAILURE)
+		{
+			reset();
+		}
 	}
 }
 
@@ -189,40 +206,51 @@ uint32_t getConfigurationHash()
 {
 	uint8_t i = 0;
 	uint32_t h = 0;
+	uint64_t t = 0;
 	uint8_t size = 0;
 	
 	for(i = 0; i < viewersSize; i++)
 	{
 		if(viewers[i]->isUsingEeprom())
 		{
-			h = HASH_INT_MULTIPLIER * h + viewers[i]->getId();
+			t = HASH_INT_MULTIPLIER * h + viewers[i]->getId();
+			h = ( t >> 32 ) ^ ( t & 0xFFFFFFFF );
 			size++;
 		}
 	}
+	
+//	Serial.println(h);
 	
 	for(i = 0; i < outputsSize; i++)
 	{
 		if(outputs[i]->isUsingEeprom())
 		{
-			h = HASH_INT_MULTIPLIER * h + outputs[i]->getId();
+			t = HASH_INT_MULTIPLIER * h + outputs[i]->getId();
+			h = ( t >> 32 ) ^ ( t & 0xFFFFFFFF );
 			size++;
 		}
 	}
+	
+//	Serial.println(h);
 	
 	for(i = 0; i < conditionsSize; i++)
 	{
 		if(conditions[i]->isUsingEeprom())
 		{
-			h = HASH_INT_MULTIPLIER * h + conditions[i]->getId();
+			t = HASH_INT_MULTIPLIER * h + conditions[i]->getId();
+			h = ( t >> 32 ) ^ ( t & 0xFFFFFFFF );
 			size++;
 		}
 	}
+	
+//	Serial.println(h);
 	
 	for(i = 0; i < sensorsSize; i++)
 	{
 		if(sensors[i]->isUsingEeprom())
 		{
-			h = HASH_INT_MULTIPLIER * h + sensors[i]->getId();
+			t = HASH_INT_MULTIPLIER * h + sensors[i]->getId();
+			h = ( t >> 32 ) ^ ( t & 0xFFFFFFFF );
 			size++;
 		}
 		
@@ -230,11 +258,14 @@ uint32_t getConfigurationHash()
 		{
 			if(sensors[i]->getPrecondition()->isUsingEeprom())
 			{
-				h = HASH_INT_MULTIPLIER * h + sensors[i]->getPrecondition()->getId();
+				t = HASH_INT_MULTIPLIER * h + sensors[i]->getPrecondition()->getId();
+				h = ( t >> 32 ) ^ ( t & 0xFFFFFFFF );
 				size++;
 			}
 		}
 	}
 	
-	return h % size;
+//	Serial.println(h);
+	
+	return h | size;
 }

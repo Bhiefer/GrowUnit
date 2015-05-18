@@ -25,3 +25,11 @@ bool HourCondition::check( int16_t value )
 		return false;
 	}
 }
+
+void HourCondition::toString( char* string, uint8_t maxLength )
+{
+	String str = String(mHour);
+	str += ":00";
+	
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
+}

@@ -43,7 +43,7 @@ static char * PLOTLY_TOKENS[PLOTLY_TOKENS_SIZE] = {"3fk2esiajr", "fphyo0oeoh"};
 
 // LCD
 #define LCD_INTERVAL 5
-#define LCD_LINE_1_LENGTH 25
+#define LCD_LINE_1_LENGTH 40
 
 // Serial
 #define SERIAL_INTERVAL 10

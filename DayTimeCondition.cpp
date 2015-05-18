@@ -40,3 +40,13 @@ bool DayTimeCondition::check( int16_t value )
 		return h > mFrom || h < mTo;
 	}
 }
+
+void DayTimeCondition::toString( char* string, uint8_t maxLength )
+{
+	String str = String(mFrom);
+	str += ":00 - ";
+	str += mTo;
+	str += ":00";
+	
+	memcpy(string, str.c_str(), min(str.length(), maxLength));
+}
