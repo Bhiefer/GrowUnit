@@ -14,11 +14,11 @@
 
 bool LessThanCondition::check( int16_t value )
 {
-	Serial.print("Podminka:");
+//	Serial.print("Podminka:");
 	// SUCHO
 	if(value < mTreshold)
 	{
-		Serial.print("sucho");
+//		Serial.print("sucho");
 
 		// neuplynuly ani tri hodiny - nemuze se jeste zalivat
 		if(!timer.checkElapsed(mLastTime, 3*ONE_HOUR))
@@ -26,26 +26,26 @@ bool LessThanCondition::check( int16_t value )
 			// nechat hodinku pro stabilizaci
 			if(timer.checkElapsed(mLastTime, 1*ONE_HOUR))
 			{
-				Serial.print(": > 1 hodina");
+//				Serial.print(": > 1 hodina");
 				// jednou prizpusobit treshold
 				if(!mAdjusted)
 				{
-					Serial.print("-prizpusobeni");
+//					Serial.print("-prizpusobeni");
 					mAdjusted = true;
-					mTreshold = mTreshold * 1.2;
+					mTreshold = value * 0.9;
 				}
 			}
 			else
 			{
-				Serial.print(": < 3 hodiny");
+//				Serial.print(": < 3 hodiny");
 			}
 			
-			Serial.println();
+//			Serial.println();
 			return false;
 		}
 		else
 		{
-			Serial.println(": > 3 hodiny");
+//			Serial.println(": > 3 hodiny");
 			// sucho po vice nez trech hodinach -> zalit
 			mAdjusted = false;
 			mLastTime = timer.current();
@@ -55,12 +55,12 @@ bool LessThanCondition::check( int16_t value )
 	// MOKRO
 	else
 	{
-		Serial.print("mokro");
+//		Serial.print("mokro");
 		
 		// zalit aspon co 8 hodin
 		if(timer.checkElapsed(mLastTime, 8*ONE_HOUR))
 		{
-			Serial.println(": > 8 hodin - ZALIT!");
+//			Serial.println(": > 8 hodin - ZALIT!");
 			int dif = value - mTreshold;
 			mTreshold = mTreshold + (0.8*dif);
 		
@@ -70,7 +70,7 @@ bool LessThanCondition::check( int16_t value )
 		}
 		else
 		{
-			Serial.println(": < 8 hodin");
+//			Serial.println(": < 8 hodin");
 			// mene nez osm hodin a je dostatecne zalito
 			return false;
 		}
@@ -123,7 +123,7 @@ uint8_t LessThanCondition::restoreFromEeprom( int16_t address )
 void LessThanCondition::toString( char* string, uint8_t maxLength )
 {
 	time_t last = mLastTime + TIMEZONE_SHIFT_SECONDS;
-	String str = String("x<") + mTreshold;
+	String str = String("< ") + mTreshold;
 	str += ",";
 	str += day(last);
 	str += ".";
