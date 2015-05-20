@@ -65,5 +65,5 @@ RelayOutput airPumpRelayOutput(AIRPUMP_RELAY_OUTPUT, 23, ONE_HOUR);
 
 SerialViewer serialViewer(SERIAL_VIEWER);
 PlotlyViewer plotlyViewer(PLOTLY_VIEWER);
-Ssd1306Viewer ssd1306Viewer(LCD_VIEWER, 2,3,4,5,6);
+Ssd1306Viewer ssd1306Viewer(LCD_VIEWER, 28,29,30,31,32);
 //Pcd8544Viewer pcd8544Viewer(LCD_VIEWER, 2,3,4,5,6);
