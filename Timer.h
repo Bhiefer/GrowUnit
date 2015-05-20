@@ -28,6 +28,7 @@ public:
 	time_t currentLocal();
 	bool checkElapsed(time_t last, time_t period);
 	float getTemp();
+	uint8_t isSummerTime();
 	
 	virtual char * toString();
 protected:

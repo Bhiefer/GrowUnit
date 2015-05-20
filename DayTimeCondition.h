@@ -15,21 +15,20 @@ class DayTimeCondition : public Condition
 {
 //variables
 private:
-	uint8_t mFrom;
-	uint8_t mTo;
+	int8_t mFromOffset;
+	int8_t mToOffset;
 
 //functions
 public:
-	DayTimeCondition(uint8_t id, uint8_t fromHour, uint8_t toHour): Condition(id)
+	DayTimeCondition(uint8_t id, int8_t fromOffset, int8_t toOffset): Condition(id)
 	{
-		mFrom = fromHour;
-		mTo = toHour;
+		mFromOffset = fromOffset;
+		mToOffset = toOffset;
 	}
 
 	virtual bool check(int16_t value);
 	
 	virtual void toString(char* string, uint8_t maxLength);
-
 }; //DayTimeCondition
 
 #endif //__DAYTIMECONDITION_H__

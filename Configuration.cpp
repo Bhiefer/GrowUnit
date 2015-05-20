@@ -54,7 +54,7 @@ NoSensor noSensor(NOTHING, &minutePrecondition);
 
 // AlwaysCondition always(ALWAYS_CONDITION);
 LessThanCondition soilDryCondition(SOIL_DRY_CONDITION, 420);
-DayTimeCondition dayTimeCondition(DAY_CONDITION, 7, 18);
+DayTimeCondition dayTimeCondition(DAY_CONDITION, 0, -1);
 AndCondition floodCondition(FLOOD_CONDITION, &dayTimeCondition, &soilDryCondition);
 HourCondition morningCondition(MORNING_CONDITION, 9);
 HourCondition afternoonCondition(AFTERNOON_CONDITION, 16);

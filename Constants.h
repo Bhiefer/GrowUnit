@@ -29,7 +29,7 @@ static const uint8_t SERVER_IP[] = { 192, 168, 0, 102};
 #define ONE_MINUTE 60
 #define ONE_HOUR 3600
 
-#define TIMEZONE_SHIFT 2
+#define TIMEZONE_SHIFT 1
 #define TIMEZONE_SHIFT_SECONDS (TIMEZONE_SHIFT*ONE_HOUR)
 
 // Plotly
